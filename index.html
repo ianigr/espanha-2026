@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Espanha 2026 💍</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f4ef;color:#1a1a1a;line-height:1.5;padding-bottom:100px;max-width:540px;margin:0 auto}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* NAV */
+.day-nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:2px solid #e5e0d8;display:flex;align-items:center;gap:5px;padding:10px 14px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;white-space:nowrap}
+.day-nav::-webkit-scrollbar{display:none}
+.day-nav a{display:inline-flex;align-items:center;padding:6px 13px;border-radius:20px;font-size:12px;font-weight:700;color:#777;border:1.5px solid #ddd;flex-shrink:0}
+.day-nav a:active,.day-nav a.sel{background:#009ee3;color:#fff;border-color:#009ee3}
+
+/* HERO */
+.hero{background:linear-gradient(150deg,#009ee3 0%,#005fa3 100%);color:#fff;text-align:center;padding:36px 20px 30px}
+.hero-icons{font-size:36px;margin-bottom:10px;letter-spacing:6px}
+.hero h1{font-size:27px;font-weight:900;letter-spacing:-.5px;margin-bottom:4px}
+.hero .sub{font-size:14px;opacity:.85;margin-bottom:20px}
+.hero-stats{display:flex;justify-content:center;gap:32px}
+.hs .n{font-size:28px;font-weight:900}
+.hs .l{font-size:11px;opacity:.7;text-transform:uppercase;letter-spacing:.07em}
+
+/* CHECKLIST */
+.cklist{background:#fffbea;border-top:3px solid #ffe600;padding:18px 20px}
+.cklist h3{font-size:14px;font-weight:800;color:#7d5a00;margin-bottom:14px;text-transform:uppercase;letter-spacing:.06em}
+.ci{display:flex;align-items:flex-start;gap:11px;padding:7px 0;border-bottom:1px solid #fde68a}
+.ci:last-child{border-bottom:none}
+.cb{width:20px;height:20px;border:2px solid #d4a017;border-radius:5px;flex-shrink:0;margin-top:1px;cursor:pointer}
+.ci-text strong{font-size:13px;color:#333;display:block;margin-bottom:1px}
+.ci-text span{font-size:12px;color:#777}
+
+/* DAY HEADER */
+.day-section{scroll-margin-top:52px}
+.day-hdr{background:#fff;padding:14px 18px 12px;border-top:6px solid #009ee3;margin-top:14px;display:flex;align-items:flex-start;gap:12px;border-bottom:1px solid #eee}
+.day-hdr.bcn{border-top-color:#e63946}
+.day-hdr.men{border-top-color:#2ec4b6}
+.day-hdr.mad2{border-top-color:#009ee3}
+.day-num{padding:4px 10px;border-radius:5px;font-size:11px;font-weight:800;color:#fff;background:#009ee3;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;flex-shrink:0;margin-top:1px}
+.day-num.bcn{background:#e63946}
+.day-num.men{background:#2ec4b6}
+.day-info h2{font-size:17px;font-weight:800;line-height:1.2;margin-bottom:3px}
+.day-info .dsub{font-size:13px;color:#888}
+.day-info .dflight{font-size:12px;color:#009ee3;font-weight:700;margin-top:4px}
+.day-info .dflight.bcn{color:#e63946}
+.day-info .dflight.men{color:#2ec4b6}
+
+/* ACTIVITY CARD */
+.act{background:#fff;margin:8px 10px;border-radius:18px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07)}
+.act-img{position:relative;height:210px;background:#ddd;overflow:hidden}
+.act-img img{height:100%;object-fit:cover}
+.act-fallback{height:210px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:50px}
+.act-fallback span{font-size:13px;color:#999;font-weight:500}
+.act-time{position:absolute;top:12px;left:12px;background:rgba(0,0,0,.68);color:#fff;font-size:12px;font-weight:700;padding:5px 11px;border-radius:7px;backdrop-filter:blur(4px)}
+.act-body{padding:16px}
+.act-name{font-size:18px;font-weight:800;margin-bottom:5px;letter-spacing:-.3px}
+.act-desc{font-size:13px;color:#555;line-height:1.65;margin-bottom:13px}
+
+/* TRANSPORT */
+.tpt{display:flex;align-items:center;gap:9px;background:#f0f8ff;border-radius:12px;padding:11px 13px;margin-bottom:10px}
+.tpt .ico{font-size:22px;flex-shrink:0}
+.tpt .info{flex:1}
+.tpt .info strong{font-size:13px;color:#004c8c;display:block;line-height:1.3}
+.tpt .info span{font-size:12px;color:#667}
+.tpt .eta{background:#009ee3;color:#fff;font-size:11px;font-weight:800;padding:4px 10px;border-radius:20px;white-space:nowrap}
+
+/* MAPS BUTTON */
+.maps-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:#34a853;color:#fff;border-radius:13px;padding:13px 16px;margin-bottom:10px;font-size:14px;font-weight:700;width:100%}
+
+/* PHOTO TIP */
+.ptip{background:#fdf4ff;border-left:3px solid #a855f7;border-radius:0 11px 11px 0;padding:10px 13px;margin-bottom:10px}
+.ptip .plabel{font-size:10px;font-weight:900;color:#7e22ce;text-transform:uppercase;letter-spacing:.09em;margin-bottom:3px}
+.ptip .ptext{font-size:12px;color:#6b21a8;line-height:1.55}
+
+/* COSTS */
+.costs{display:flex;gap:6px;flex-wrap:wrap}
+.ct{background:#f0f8ff;border:1px solid #b3d9f5;border-radius:20px;padding:4px 11px;font-size:12px;color:#004c8c;font-weight:700}
+.ct.free{background:#f0fff4;border-color:#86efac;color:#166534}
+.ct.warn{background:#fffbea;border-color:#fde68a;color:#854d0e}
+
+/* WARNING */
+.wbox{background:#fffbea;border:1px solid #fde68a;border-radius:10px;padding:10px 13px;margin-bottom:10px;font-size:12px;color:#7d5a00;line-height:1.5}
+.wbox strong{display:block;margin-bottom:2px;font-weight:800}
+
+/* DIVIDER */
+.adiv{display:flex;align-items:center;gap:8px;padding:2px 18px;font-size:11px;color:#bbb}
+.adiv::before,.adiv::after{content:'';flex:1;height:1px;background:#e8e4dc}
+
+/* RESTAURANT */
+.rest{background:#fffbf0;margin:8px 10px;border-radius:18px;border:1.5px solid #fde68a;padding:16px}
+.rl{font-size:10px;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:.09em;margin-bottom:9px}
+.rname{font-size:16px;font-weight:800;margin-bottom:2px}
+.rtype{font-size:12px;color:#999;margin-bottom:7px}
+.rrec{font-size:13px;color:#555;line-height:1.55;margin-bottom:12px}
+.rbtns{display:flex;gap:8px}
+.rbtn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:11px 8px;border-radius:11px;font-size:13px;font-weight:700;border:1.5px solid;text-align:center}
+.rbtn.maps{color:#34a853;border-color:#34a853}
+.rbtn.insta{color:#e1306c;border-color:#e1306c}
+
+/* PROPOSAL CARD */
+.prop-card{background:linear-gradient(135deg,#667eea,#764ba2);margin:8px 10px;border-radius:18px;padding:26px 20px;color:#fff;text-align:center}
+.prop-card .pce{font-size:44px;margin-bottom:12px}
+.prop-card h3{font-size:21px;font-weight:900;margin-bottom:9px;letter-spacing:-.3px}
+.prop-card p{font-size:13px;opacity:.92;line-height:1.7}
+.prop-tip{background:rgba(255,255,255,.15);border-radius:10px;padding:10px 14px;margin-top:14px;font-size:12px;line-height:1.6}
+
+/* DAY SUMMARY */
+.dsum{background:#fff;margin:8px 10px 24px;border-radius:18px;padding:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.dsum .v{font-size:21px;font-weight:900;color:#009ee3}
+.dsum .v.bcn{color:#e63946}
+.dsum .v.men{color:#2ec4b6}
+.dsum .lb{font-size:10px;color:#999;text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+
+/* FAB */
+.fab{position:fixed;bottom:24px;right:18px;width:48px;height:48px;background:#009ee3;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;box-shadow:0 4px 16px rgba(0,158,227,.45);z-index:99}
+
+/* FLIGHT INFO CARD */
+.flight-card{background:#fff;margin:8px 10px;border-radius:18px;border:1.5px solid #e0e7ff;padding:16px;display:flex;align-items:center;gap:12px}
+.flight-card .fio{font-size:28px;flex-shrink:0}
+.flight-card .fi strong{font-size:14px;display:block;color:#333}
+.flight-card .fi span{font-size:12px;color:#888}
+.flight-card .fi-cost{margin-left:auto;text-align:right}
+.flight-card .fi-cost .fv{font-size:15px;font-weight:800;color:#009ee3}
+.flight-card .fi-cost .fl{font-size:11px;color:#999}
+</style>
+</head>
+<body>
+
+<div id="top"></div>
+
+<!-- NAV -->
+<nav class="day-nav">
+  <a href="#checklist">📋</a>
+  <a href="#d1">D1<br><span style="font-size:10px;font-weight:500">29/Set</span></a>
+  <a href="#d2">D2<br><span style="font-size:10px;font-weight:500">30/Set</span></a>
+  <a href="#d3">D3<br><span style="font-size:10px;font-weight:500">01/Out</span></a>
+  <a href="#d4">D4<br><span style="font-size:10px;font-weight:500">02/Out</span></a>
+  <a href="#d5">D5<br><span style="font-size:10px;font-weight:500">03/Out</span></a>
+  <a href="#d6">D6<br><span style="font-size:10px;font-weight:500">04/Out</span></a>
+  <a href="#d7">💍<br><span style="font-size:10px;font-weight:500">05/Out</span></a>
+  <a href="#d8">D8<br><span style="font-size:10px;font-weight:500">06/Out</span></a>
+  <a href="#d9">D9<br><span style="font-size:10px;font-weight:500">07/Out</span></a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-icons">✈️🇪🇸💍</div>
+  <h1>Espanha 2026</h1>
+  <div class="sub">28 Set – 07 Out · Madrid · Barcelona · Menorca</div>
+  <div class="hero-stats">
+    <div class="hs"><div class="n">9</div><div class="l">Dias</div></div>
+    <div class="hs"><div class="n">3</div><div class="l">Cidades</div></div>
+    <div class="hs"><div class="n">1</div><div class="l">Pedido 💍</div></div>
+  </div>
+</header>
+
+<!-- CHECKLIST -->
+<section id="checklist">
+  <div class="cklist">
+    <h3>⚠️ Comprar antes de viajar</h3>
+    <div class="ci"><div class="cb"></div><div class="ci-text"><strong>Tour Bernabéu</strong><span>realmadrid.com — ~€35pp · só seg–sex · 30/Set (terça) ✅</span></div></div>
+    <div class="ci"><div class="cb"></div><div class="ci-text"><strong>Sagrada Família</strong><span>sagradafamilia.org — ~€35–45pp · RESERVAR COM ANTECEDÊNCIA</span></div></div>
+    <div class="ci"><div class="cb"></div><div class="ci-text"><strong>Camp Nou</strong><span>fcbarcelona.com — confirmar se aberto pós-reforma</span></div></div>
+    <div class="ci"><div class="cb"></div><div class="ci-text"><strong>AVE/Ouigo Madrid→Barcelona</strong><span>ouigo.es ou renfe.com — €9–30pp · quanto antes, mais barato</span></div></div>
+    <div class="ci"><div class="cb"></div><div class="ci-text"><strong>Voo BCN→Menorca 03/Out 21:30</strong><span>Vueling ou Air Nostrum · ~€40–70pp</span></div></div>
+    <div class="ci"><div class="cb"></div><div class="ci-text"><strong>Voo Menorca→Madrid 06/Out 08:25</strong><span>Iberia ou Vueling · ~€50–90pp</span></div></div>
+    <div class="ci"><div class="cb"></div><div class="ci-text"><strong>Carro em Menorca</strong><span>Europcar/Avis no aeroporto de Mahón — €40–60/dia</span></div></div>
+    <div class="ci"><div class="cb"></div><div class="ci-text"><strong>Barco em Ciudadela</strong><span>Barco privado com skipper: €200–350 total. Contato prévio no porto.</span></div></div>
+    <div class="ci"><div class="cb"></div><div class="ci-text"><strong>Taberna La Bola (jantar D2)</strong><span>Reservar pelo site ou telefone</span></div></div>
+    <div class="ci"><div class="cb"></div><div class="ci-text"><strong>Sobrino de Botín (D8)</strong><span>botin.es — o restaurante mais antigo do mundo (1725)</span></div></div>
+    <div class="ci"><div class="cb"></div><div class="ci-text"><strong>Todos os hostéis e hotel Mahón</strong><span>Madrid x2 noites · Barcelona x2 noites · Ciudadela x2 noites · Mahón x1 noite · Madrid x1 noite</span></div></div>
+    <div class="ci"><div class="cb"></div><div class="ci-text"><strong>Bagagem: só mala de mão 10kg</strong><span>55×40×25cm — viagem toda de carry-on</span></div></div>
+    <div class="ci"><div class="cb"></div><div class="ci-text"><strong>€200 em espécie por pessoa</strong><span>Bares locais costumam preferir dinheiro</span></div></div>
+  </div>
+</section>
+
+<!-- ===== DIA 1 ===== -->
+<section id="d1" class="day-section">
+  <div class="day-hdr">
+    <div class="day-num">Dia 1 · Seg</div>
+    <div class="day-info">
+      <h2>🇪🇸 Chegada em Madrid</h2>
+      <div class="dsub">29 de Setembro · Aeroporto → Centro</div>
+      <div class="dflight">✈️ Pouso às 10:05 no Terminal 2</div>
+    </div>
+  </div>
+
+  <!-- Aeroporto → Hostel -->
+  <div class="act">
+    <div class="act-img">
+      <div class="act-fallback" style="background:linear-gradient(135deg,#e8f4ff,#c7e3f7)">🛬<span>Chegada Madrid T2</span></div>
+      <div class="act-time">10:05 – 11:00</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Aeroporto T2 → Hostel</div>
+      <div class="act-desc">Sem bagagem despachada — saída rápida do terminal. Seguir placas "Metro" dentro do T2.</div>
+      <div class="tpt">
+        <div class="ico">🚇</div>
+        <div class="info"><strong>Linha 8 (rosa) → Nuevos Ministerios → L10 → Tribunal</strong><span>Estação: Aeropuerto T1-T2-T3 → troca em Nuevos Ministerios</span></div>
+        <div class="eta">~40 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=40.4168,-3.7038&travelmode=transit" target="_blank" class="maps-btn">📍 Navegar até Puerta del Sol (referência)</a>
+      <div class="costs"><span class="ct">💳 €5pp (bilhete aeroporto)</span></div>
+    </div>
+  </div>
+
+  <div class="adiv">a pé ~10 min</div>
+
+  <!-- Gran Vía -->
+  <div class="act">
+    <div class="act-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Edificio_Metrop%C3%B3lis_%28Madrid%29_01.jpg/600px-Edificio_Metrop%C3%B3lis_%28Madrid%29_01.jpg" alt="Gran Vía" onerror="this.parentNode.innerHTML='<div class=act-fallback style=background:linear-gradient(135deg,#fff3e0,#ffe0b2)>🏛️<span>Gran Vía</span></div>'">
+      <div class="act-time">11:00 – 12:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Gran Vía + Plaza de España</div>
+      <div class="act-desc">A avenida mais icônica de Madrid. De manhã cedo ainda está tranquila — ideal para fotos. Caminhar do Edificio Metrópolis (esquina com Alcalá) até a Plaza de España. <strong>Foto da namorada na placa "Gran Vía"</strong> nas esquinas ao longo da avenida.</div>
+      <div class="tpt">
+        <div class="ico">🚶</div>
+        <div class="info"><strong>A pé do hostel (Sol/La Latina)</strong><span>10–15 min subindo Calle del Carmen ou Calle Montera</span></div>
+        <div class="eta">Grátis</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=40.41979,-3.69969&travelmode=walking" target="_blank" class="maps-btn">📍 Navegar → Edificio Metrópolis</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">Ficar no meio da Calle de Alcalá (quando seguro), ângulo baixo com a calçada no primeiro plano, Edificio Metrópolis ao fundo. Funciona melhor antes das 09h com luz lateral. Para a namorada: placa "Gran Vía" na esquina + Metrópolis desfocado atrás.</div>
+      </div>
+      <div class="costs"><span class="ct free">🆓 Grátis</span></div>
+    </div>
+  </div>
+
+  <div class="adiv">a pé ~15 min</div>
+
+  <!-- Palácio Real -->
+  <div class="act">
+    <div class="act-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Palacio_Real_de_Madrid_-_01.jpg/600px-Palacio_Real_de_Madrid_-_01.jpg" alt="Palácio Real" onerror="this.parentNode.innerHTML='<div class=act-fallback style=background:linear-gradient(135deg,#f3f0e0,#e8e0c0)>🏰<span>Palácio Real</span></div>'">
+      <div class="act-time">12:30 – 13:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Palácio Real + Almudena + Plaza de Oriente</div>
+      <div class="act-desc">O maior palácio real da Europa em área. A fachada de pedra branca é monumental — não precisa entrar (interior €14). Catedral de la Almudena ao lado: entrar grátis, interior colorido único. Plaza de Oriente em frente com estátua equestre de Felipe IV.</div>
+      <div class="tpt">
+        <div class="ico">🚶</div>
+        <div class="info"><strong>A pé de Plaza de España</strong><span>10 min descendo Calle de Bailén</span></div>
+        <div class="eta">~10 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=40.41786,-3.71422&travelmode=walking" target="_blank" class="maps-btn">📍 Navegar → Palácio Real</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">Ficar na Plaza de Oriente, lado esquerdo dos jardins, com a estátua equestre de Felipe IV no primeiro plano e a fachada do palácio atrás. Ângulo 3/4 lateral para profundidade.</div>
+      </div>
+      <div class="costs"><span class="ct free">🆓 Fachada grátis</span><span class="ct">€14 interior (skip)</span></div>
+    </div>
+  </div>
+
+  <div class="adiv">a pé ~10 min</div>
+
+  <!-- Plaza Mayor -->
+  <div class="act">
+    <div class="act-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Plaza_Mayor_de_Madrid_06.jpg/600px-Plaza_Mayor_de_Madrid_06.jpg" alt="Plaza Mayor" onerror="this.parentNode.innerHTML='<div class=act-fallback style=background:linear-gradient(135deg,#fff3e0,#ffe0b2)>🏟️<span>Plaza Mayor</span></div>'">
+      <div class="act-time">13:30 – 14:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Plaza Mayor + Bocadillo de Calamares</div>
+      <div class="act-desc">A praça mais icônica de Madrid — arcadas barrocas vermelhas do século XVII. Comer o lanche mais madrileno que existe: <strong>bocadillo de calamares</strong> (anel de lula frito em pão). Depois: Puerta del Sol a 5 min a pé (km 0 da Espanha, estátua do Urso).</div>
+      <div class="tpt">
+        <div class="ico">🚶</div>
+        <div class="info"><strong>A pé do Palácio Real</strong><span>10 min via Calle Mayor</span></div>
+        <div class="eta">~10 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=40.41540,-3.70749&travelmode=walking" target="_blank" class="maps-btn">📍 Navegar → Plaza Mayor</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">Entrar pela arcada lateral e fotografar de dentro para fora — a arcada enquadra a praça com a estátua de Felipe III ao fundo. Luz melhor à tarde com sol baixo.</div>
+      </div>
+      <div class="costs"><span class="ct free">🆓 Praça grátis</span><span class="ct">🦑 €4 bocadillo</span></div>
+    </div>
+  </div>
+
+  <div class="adiv">descanso no hostel · 15:00–16:30</div>
+
+  <!-- Malasaña -->
+  <div class="act">
+    <div class="act-img">
+      <div class="act-fallback" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8)">🎨<span>Malasaña</span></div>
+      <div class="act-time">16:30 – 18:00</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Bairro de Malasaña</div>
+      <div class="act-desc">O bairro mais cool de Madrid: street art, lojas independentes, fachadas art nouveau. Caminhar pela <strong>Calle Fuencarral</strong> (de Gran Vía até Tribunal) e pela <strong>Plaza del Dos de Mayo</strong> — o coração do bairro, ótima para uma cerveja.</div>
+      <div class="tpt">
+        <div class="ico">🚶</div>
+        <div class="info"><strong>A pé de Sol ou Gran Vía</strong><span>15 min subindo Calle Fuencarral</span></div>
+        <div class="eta">~15 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=40.42680,-3.70258&travelmode=walking" target="_blank" class="maps-btn">📍 Navegar → Plaza del Dos de Mayo</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">Murais de street art grandes em Calle Velarde e Calle San Andrés — usar o mural como fundo completo, pessoa no canto inferior. Buscar murais de artistas locais nas vielas paralelas à Fuencarral.</div>
+      </div>
+      <div class="costs"><span class="ct free">🆓 Grátis</span><span class="ct">🍺 €2–3 cerveja opcional</span></div>
+    </div>
+  </div>
+
+  <div class="adiv">a pé ~20 min</div>
+
+  <!-- Templo de Debod -->
+  <div class="act">
+    <div class="act-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Templo_de_Debod_%28Madrid%29_02.jpg/600px-Templo_de_Debod_%28Madrid%29_02.jpg" alt="Templo de Debod" onerror="this.parentNode.innerHTML='<div class=act-fallback style=background:linear-gradient(135deg,#fef9c3,#fef08a)>🏛️<span>Templo de Debod</span></div>'">
+      <div class="act-time">18:00 – 20:15</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Templo de Debod (Pôr do Sol)</div>
+      <div class="act-desc">Templo egípcio de 2.200 anos, desmontado e doado pelo Egito. Reconstruído em Madrid. A colina ao lado tem vista panorâmica oeste — o sol se põe em direção à Casa de Campo. <strong>Horário:</strong> Ter–Sex 18h–20h (entrar às 18h).</div>
+      <div class="tpt">
+        <div class="ico">🚶</div>
+        <div class="info"><strong>A pé de Malasaña</strong><span>20 min descendo Calle San Bernardo → Plaza de España → Parque del Oeste</span></div>
+        <div class="eta">~20 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=40.42384,-3.71842&travelmode=walking" target="_blank" class="maps-btn">📍 Navegar → Templo de Debod</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">Chegar às 18h30. Posicionar baixo na grama em frente ao tanque de água para pegar o reflexo do templo. 30–40 min antes do pôr do sol é o momento dourado. Silhueta da namorada com o templo atrás funciona muito bem.</div>
+      </div>
+      <div class="costs"><span class="ct free">🆓 Grátis</span></div>
+    </div>
+  </div>
+
+  <div class="adiv">metro ou a pé ~15 min</div>
+
+  <!-- Jantar La Latina -->
+  <div class="rest">
+    <div class="rl">🍽️ Jantar · La Latina</div>
+    <div class="rname">Calle Cava Baja — tapas em La Latina</div>
+    <div class="rtype">Tapas madrilenas · € (€10–16pp)</div>
+    <div class="rrec">A rua mais clássica para tapas em Madrid. Em muitos bares a tapa vem grátis com a bebida. Pedir: <strong>patatas bravas, croquetas de jamón, caña de cerveza</strong>. Evitar bares com cardápio plastificado na calçada — ir nos que têm movimento local.</div>
+    <div class="rbtns">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=40.41321,-3.70940&travelmode=transit" target="_blank" class="rbtn maps">📍 Ir a La Latina</a>
+      <a href="https://www.instagram.com/explore/tags/calacavabaja/" target="_blank" class="rbtn insta">📷 #CavaBaja</a>
+    </div>
+  </div>
+
+  <div class="dsum">
+    <div><div class="v">~12 km</div><div class="lb">Caminhados</div></div>
+    <div><div class="v">€45–60</div><div class="lb">Estimado pp</div></div>
+    <div><div class="v">~9h</div><div class="lb">Atividades</div></div>
+  </div>
+</section>
+
+<!-- ===== DIA 2 ===== -->
+<section id="d2" class="day-section">
+  <div class="day-hdr">
+    <div class="day-num">Dia 2 · Ter</div>
+    <div class="day-info">
+      <h2>🏟️ Madrid: Retiro + Bernabéu</h2>
+      <div class="dsub">30 de Setembro · Dia completo</div>
+    </div>
+  </div>
+
+  <!-- Retiro -->
+  <div class="act">
+    <div class="act-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Estanque_Grande_del_Retiro_%281%29.jpg/600px-Estanque_Grande_del_Retiro_%281%29.jpg" alt="Parque del Retiro" onerror="this.parentNode.innerHTML='<div class=act-fallback style=background:linear-gradient(135deg,#dcfce7,#bbf7d0)>🌿<span>Parque del Retiro</span></div>'">
+      <div class="act-time">08:00 – 09:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Parque del Retiro + Barco no Lago</div>
+      <div class="act-desc">O pulmão verde de Madrid. <strong>Estanque Grande</strong>: alugar barco a remo — €6/barco (2 pessoas), 45 min. De manhã cedo o lago está quase vazio. <strong>Palácio de Cristal</strong> a 3 min do lago: estrutura de ferro e vidro de 1887, entrada gratuita.</div>
+      <div class="tpt">
+        <div class="ico">🚇</div>
+        <div class="info"><strong>Metro L1 de Sol → Retiro</strong><span>2 paradas, ~5 min. Ou a pé de Sol ~20 min.</span></div>
+        <div class="eta">~5 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=40.41531,-3.68442&travelmode=transit" target="_blank" class="maps-btn">📍 Navegar → Parque del Retiro</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">De dentro do barco a remo, com a namorada remando de frente para você, Palácio de Cristal ao fundo desfocado. Luz da manhã lateral. Ou: Palácio de Cristal refletido na própria estrutura de vidro.</div>
+      </div>
+      <div class="costs"><span class="ct free">🆓 Parque grátis</span><span class="ct">⛵ €3pp barco</span></div>
+    </div>
+  </div>
+
+  <div class="adiv">metro ~20 min</div>
+
+  <!-- Bernabéu -->
+  <div class="act">
+    <div class="act-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Estadio_Santiago_Bernab%C3%A9u_%28DSC_0223%29.jpg/600px-Estadio_Santiago_Bernab%C3%A9u_%28DSC_0223%29.jpg" alt="Bernabéu" onerror="this.parentNode.innerHTML='<div class=act-fallback style=background:linear-gradient(135deg,#fffde7,#fff9c4)>⚽<span>Santiago Bernabéu</span></div>'">
+      <div class="act-time">11:00 – 13:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Tour Santiago Bernabéu</div>
+      <div class="act-desc">A casa do Real Madrid. O tour inclui: campo (vista da tribuna), balneários dos jogadores, sala de troféus, sala de imprensa e tribuna de honra. Duração ~1h30–2h com audioguia incluído.</div>
+      <div class="wbox"><strong>⚠️ OBRIGATÓRIO reservar online em realmadrid.com</strong>Tours só disponíveis seg–sex. Você vai na terça ✅</div>
+      <div class="tpt">
+        <div class="ico">🚇</div>
+        <div class="info"><strong>Metro L1 Sol → Nuevos Ministerios → L10 → Santiago Bernabéu</strong><span>~20 min total. Usar Metrobús 10 viagens €12.20pp</span></div>
+        <div class="eta">~20 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=40.45307,-3.68834&travelmode=transit" target="_blank" class="maps-btn">📍 Navegar → Santiago Bernabéu</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">Na tribuna de honra, ângulo lateral olhando para o gramado verde com as arquibancadas ao fundo. Usar modo retrato. Outra opção: balneário dos jogadores com os nomes nas camisas.</div>
+      </div>
+      <div class="costs"><span class="ct">🏟️ ~€35pp (reservar!)</span></div>
+    </div>
+  </div>
+
+  <div class="adiv">metro ~15 min · almoço 13:30–14:30</div>
+
+  <!-- Lavapiés -->
+  <div class="act">
+    <div class="act-img">
+      <div class="act-fallback" style="background:linear-gradient(135deg,#fee2e2,#fecaca)">🎭<span>Lavapiés</span></div>
+      <div class="act-time">15:00 – 17:00</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Bairro de Lavapiés</div>
+      <div class="act-desc">Multicultural, bohemio, cheio de street art. Atmosfera completamente diferente do centro turístico. A Calle de Argumosa é a principal — bares baratos, ambiente local. Muitas galerias de arte alternativa e murais.</div>
+      <div class="tpt">
+        <div class="ico">🚇</div>
+        <div class="info"><strong>Metro L5 → Lavapiés (ou a pé de Sol ~20 min)</strong><span>Ou do Bernabéu: L10 → Tribunal → L1 → Antón Martín, caminhada</span></div>
+        <div class="eta">~20 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=40.40900,-3.70400&travelmode=transit" target="_blank" class="maps-btn">📍 Navegar → Lavapiés</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">Calle de Argumosa com as mesas de bar coloridas e o street art ao fundo. Procurar o mural da praça El Matadero (cultural center) — é gigante e fotogênico.</div>
+      </div>
+      <div class="costs"><span class="ct free">🆓 Grátis</span></div>
+    </div>
+  </div>
+
+  <!-- Jantar Taberna La Bola -->
+  <div class="rest">
+    <div class="rl">🍽️ Jantar Especial · Madrid</div>
+    <div class="rname">Taberna La Bola</div>
+    <div class="rtype">Cocido madrileno tradicional · €€ (~€22–28pp)</div>
+    <div class="rrec">Fundada em 1870, serve o <strong>cocido madrileno</strong> desde sempre — grão de bico com carne, chouriço e legumes. É o prato de Madrid. Não é turístico. Reservar com antecedência obrigatório.</div>
+    <div class="rbtns">
+      <a href="https://www.google.com/maps/search/?api=1&query=Taberna+La+Bola+Madrid" target="_blank" class="rbtn maps">📍 Google Maps</a>
+      <a href="https://www.instagram.com/tabernalabola/" target="_blank" class="rbtn insta">📷 @tabernalabola</a>
+    </div>
+  </div>
+
+  <div class="rest" style="margin-top:-4px">
+    <div class="rl">☕ Clássico de Madrid</div>
+    <div class="rname">Chocolatería San Ginés</div>
+    <div class="rtype">Churros com chocolate · € (~€5pp)</div>
+    <div class="rrec">Aberta desde 1894, 24h. Pedir: <strong>churros com chocolate quente</strong>. A taça de chocolate espesso é diferente de tudo. Funciona como lanche depois do Retiro ou da caminhada.</div>
+    <div class="rbtns">
+      <a href="https://www.google.com/maps/search/?api=1&query=Chocolateria+San+Gines+Madrid" target="_blank" class="rbtn maps">📍 Google Maps</a>
+      <a href="https://www.instagram.com/chocolateriasangines/" target="_blank" class="rbtn insta">📷 @chocolateriasangines</a>
+    </div>
+  </div>
+
+  <div class="dsum">
+    <div><div class="v">~10 km</div><div class="lb">Caminhados</div></div>
+    <div><div class="v">€55–70</div><div class="lb">Estimado pp</div></div>
+    <div><div class="v">~8h</div><div class="lb">Atividades</div></div>
+  </div>
+</section>
+
+<!-- ===== DIA 3 ===== -->
+<section id="d3" class="day-section">
+  <div class="day-hdr">
+    <div class="day-num">Dia 3 · Qua</div>
+    <div class="day-info">
+      <h2>🚄 Madrid → Barcelona</h2>
+      <div class="dsub">1 de Outubro · AVE ~13h · Chegada BCN ~15h30</div>
+      <div class="dflight bcn">🚆 AVE Atocha → Sants · ~2h30</div>
+    </div>
+  </div>
+
+  <!-- San Ginés -->
+  <div class="act">
+    <div class="act-img">
+      <div class="act-fallback" style="background:linear-gradient(135deg,#fef3c7,#fde68a)">☕<span>Chocolatería San Ginés</span></div>
+      <div class="act-time">08:00 – 08:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Chocolatería San Ginés</div>
+      <div class="act-desc">Última manhã em Madrid — começar com o café da manhã mais icônico da cidade. Churros com chocolate espesso desde 1894.</div>
+      <div class="tpt">
+        <div class="ico">🚶</div>
+        <div class="info"><strong>A pé · próximo de Sol</strong><span>Pasadizo de San Ginés, 5 (entre Opera e Sol)</span></div>
+        <div class="eta">5 min de Sol</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=40.41485,-3.70861&travelmode=walking" target="_blank" class="maps-btn">📍 Navegar → San Ginés</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">A taça de chocolate espesso com os churros na mesa de mármore, com a iluminação quente do local histórico ao fundo. Usar luz natural da janela se possível, sem flash.</div>
+      </div>
+      <div class="costs"><span class="ct">☕ €5pp</span></div>
+    </div>
+  </div>
+
+  <!-- Atocha -->
+  <div class="act">
+    <div class="act-img">
+      <div class="act-fallback" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0)">🌿<span>Estação de Atocha</span></div>
+      <div class="act-time">11:30 – 13:00</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Estação de Atocha + Check-out</div>
+      <div class="act-desc">A estação de trem mais bonita do mundo tem um <strong>jardim tropical gigante</strong> no interior da estação histórica de 1851 — com tartarugas caminhando pelo jardim. Vale 20 min antes do trem. Almoço: comprar sanduíche/lanche para o trem no supermercado ou na estação.</div>
+      <div class="tpt">
+        <div class="ico">🚇</div>
+        <div class="info"><strong>Metro L1 Sol → Atocha Renfe</strong><span>2 paradas, ~5 min. Chegar 30 min antes do trem.</span></div>
+        <div class="eta">~5 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=40.40650,-3.68974&travelmode=transit" target="_blank" class="maps-btn">📍 Navegar → Estação Atocha</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">A abóbada de ferro e vidro de 1851 com o jardim tropical abaixo — usar ângulo amplo olhando para cima. A tartaruga na trilha do jardim com a estrutura metálica ao fundo também é uma foto única.</div>
+      </div>
+      <div class="costs"><span class="ct free">🆓 Grátis</span><span class="ct">🥪 €6–8 almoço</span></div>
+    </div>
+  </div>
+
+  <div class="flight-card">
+    <div class="fio">🚄</div>
+    <div class="fi"><strong>AVE/Ouigo: Madrid Atocha → Barcelona Sants</strong><span>13:00 · ~2h30–3h · Chega 15:30–16:00</span></div>
+    <div class="fi-cost"><div class="fv">€15–30</div><div class="fl">por pessoa</div></div>
+  </div>
+
+  <!-- Passeig de Gràcia -->
+  <div class="act">
+    <div class="act-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Casa_Batll%C3%B3_01.jpg/600px-Casa_Batll%C3%B3_01.jpg" alt="Casa Batlló" onerror="this.parentNode.innerHTML='<div class=act-fallback style=background:linear-gradient(135deg,#fce7f3,#f9a8d4)>🦎<span>Casa Batlló</span></div>'">
+      <div class="act-time">16:00 – 18:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Passeig de Gràcia — primeira caminhada</div>
+      <div class="act-desc">A avenida mais bonita de Barcelona. <strong>Casa Batlló</strong> (nº 43): fachada de Gaudí com escamas de dragão. <strong>La Pedrera</strong> (nº 92): telhado ondulado. <strong>Casa Amatller</strong> (nº 41): modernismo catalão. Tudo grátis por fora. O calçadão hexagonal é design original de Gaudí.</div>
+      <div class="tpt">
+        <div class="ico">🚇</div>
+        <div class="info"><strong>Metro L3 de Sants Estació → Passeig de Gràcia</strong><span>~10 min · ou direto de taxi do Sants</span></div>
+        <div class="eta">~10 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=41.39160,2.16503&travelmode=transit" target="_blank" class="maps-btn">📍 Navegar → Casa Batlló</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">Casa Batlló: ângulo baixo do calçadão apontando para cima, fachada completa enquadrada. Funciona melhor com luz quente de fim de tarde. O hexágono do calçadão no primeiro plano como detalhe é uma foto menos óbvia mas muito boa.</div>
+      </div>
+      <div class="costs"><span class="ct free">🆓 Grátis (exterior)</span></div>
+    </div>
+  </div>
+
+  <!-- El Born -->
+  <div class="rest">
+    <div class="rl">🍽️ Jantar · El Born</div>
+    <div class="rname">Bar del Pla</div>
+    <div class="rtype">Tapas catalanas · €€ (~€15–20pp)</div>
+    <div class="rrec">Melhor custo-benefício de Barcelona para jantar. Pedir: <strong>croquetes de bacallà, patates braves, truita de patates</strong>. Ambiente animado, boa relação qualidade-preço. Reservar se possível.</div>
+    <div class="rbtns">
+      <a href="https://www.google.com/maps/search/?api=1&query=Bar+del+Pla+Barcelona+El+Born" target="_blank" class="rbtn maps">📍 Google Maps</a>
+      <a href="https://www.instagram.com/bardelpla/" target="_blank" class="rbtn insta">📷 @bardelpla</a>
+    </div>
+  </div>
+
+  <div class="dsum">
+    <div><div class="v bcn">~13 km</div><div class="lb">Caminhados</div></div>
+    <div><div class="v bcn">€45–60</div><div class="lb">Estimado pp</div></div>
+    <div><div class="v bcn">AVE 2h30</div><div class="lb">Trem</div></div>
+  </div>
+</section>
+
+<!-- ===== DIA 4 ===== -->
+<section id="d4" class="day-section">
+  <div class="day-hdr bcn">
+    <div class="day-num bcn">Dia 4 · Qui</div>
+    <div class="day-info">
+      <h2>🏛️ Barcelona — Dia Inteiro</h2>
+      <div class="dsub">2 de Outubro · Sagrada Família + Camp Nou + Gótico</div>
+    </div>
+  </div>
+
+  <!-- Sagrada Família -->
+  <div class="act">
+    <div class="act-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Sagrada_Familia_01.jpg/600px-Sagrada_Familia_01.jpg" alt="Sagrada Família" onerror="this.parentNode.innerHTML='<div class=act-fallback style=background:linear-gradient(135deg,#fce7f3,#fbcfe8)>⛪<span>Sagrada Família</span></div>'">
+      <div class="act-time">09:00 – 11:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Sagrada Família</div>
+      <div class="act-desc">A obra-prima de Gaudí. Chegar às 9h exatas com ingresso já no celular. <strong>Fachada da Natividade</strong> (leste): a luz da manhã incide diretamente nela — por isso 9h é crucial. <strong>Interior</strong>: colunas que imitam floresta, luz colorida dos vitrais. Subir as torres vale muito (vista panorâmica).</div>
+      <div class="wbox"><strong>⚠️ RESERVA OBRIGATÓRIA em sagradafamilia.org</strong>Comprar com antecedência. Quem não reservou espera 1–2h de fila.</div>
+      <div class="tpt">
+        <div class="ico">🚇</div>
+        <div class="info"><strong>Metro L2 ou L5 → Sagrada Família</strong><span>De El Born: L4 Jaume I → Verdaguer → L5 → Sagrada Família</span></div>
+        <div class="eta">~18 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=41.40363,2.17435&travelmode=transit" target="_blank" class="maps-btn">📍 Navegar → Sagrada Família</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">Ficar no Plaça de Gaudí (lado leste, com lago): o lago reflete a Fachada da Natividade — foto clássica e incrível às 9h com luz de manhã. Dentro: nave central em direção ao altar com os vitrais laterais colorindo tudo.</div>
+      </div>
+      <div class="costs"><span class="ct">⛪ €35–45pp (com torres)</span></div>
+    </div>
+  </div>
+
+  <div class="adiv">metro ~25 min</div>
+
+  <!-- Camp Nou -->
+  <div class="act">
+    <div class="act-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Camp_Nou%2C_27_April_2019.jpg/600px-Camp_Nou%2C_27_April_2019.jpg" alt="Camp Nou" onerror="this.parentNode.innerHTML='<div class=act-fallback style=background:linear-gradient(135deg,#dbeafe,#bfdbfe)>🔵<span>Camp Nou</span></div>'">
+      <div class="act-time">12:00 – 13:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Camp Nou</div>
+      <div class="act-desc">A casa do Barça. Tour Espai Barça inclui: campo, balneários, sala de troféus, museu. <strong>⚠️ Confirmar status da reforma Espai Barça em fcbarcelona.com</strong> — o estádio estava em obras mas deveria estar aberto em 2026.</div>
+      <div class="tpt">
+        <div class="ico">🚇</div>
+        <div class="info"><strong>Metro L5 de Sagrada Família → Collblanc</strong><span>~12 min, 6 paradas. A pé do Collblanc ~10 min.</span></div>
+        <div class="eta">~22 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=41.38087,2.12282&travelmode=transit" target="_blank" class="maps-btn">📍 Navegar → Camp Nou</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">No campo, posicionar na tribuna lateral baixa olhando para as arquibancadas — a escala é absurda, transmite a grandiosidade. Outra: uniforme favorito na cabine dos jogadores com o nome na camiseta atrás.</div>
+      </div>
+      <div class="costs"><span class="ct">🔵 ~€32pp (verificar abertura)</span></div>
+    </div>
+  </div>
+
+  <div class="adiv">metro ~20 min · almoço ~14h</div>
+
+  <!-- Barri Gòtic -->
+  <div class="act">
+    <div class="act-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Pont_del_Bisbe_%28Barcelona%29.jpg/600px-Pont_del_Bisbe_%28Barcelona%29.jpg" alt="Pont del Bisbe" onerror="this.parentNode.innerHTML='<div class=act-fallback style=background:linear-gradient(135deg,#f3f4f6,#e5e7eb)>🏛️<span>Barri Gòtic</span></div>'">
+      <div class="act-time">15:00 – 16:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Barri Gòtic + Pont del Bisbe</div>
+      <div class="act-desc">Ruas medievais do século XIV. Percurso: <strong>Pont del Bisbe</strong> (passarela gótica sobre a rua, muito fotogênica) → <strong>Plaça de Sant Jaume</strong> → <strong>Carrer del Call</strong> → <strong>Catedral de Barcelona</strong> (entrada grátis, gótica do séc. XIV).</div>
+      <div class="tpt">
+        <div class="ico">🚇</div>
+        <div class="info"><strong>Metro L3 → Liceu ou L4 → Jaume I</strong><span>Do Camp Nou: L5 → Diagonal → L3 → Liceu</span></div>
+        <div class="eta">~20 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=41.38210,2.17680&travelmode=transit" target="_blank" class="maps-btn">📍 Navegar → Pont del Bisbe</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">Pont del Bisbe: posicionar embaixo do arco olhando para cima — a perspectiva do corredor gótico é perfeita. Usar silhueta de uma pessoa passando pela ponte no centro. Wide angle ajuda muito.</div>
+      </div>
+      <div class="costs"><span class="ct free">🆓 Grátis</span></div>
+    </div>
+  </div>
+
+  <div class="adiv">a pé ~10 min</div>
+
+  <!-- Santa Maria del Mar -->
+  <div class="act">
+    <div class="act-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/BasilicaSantaMariaDelMar.jpg/600px-BasilicaSantaMariaDelMar.jpg" alt="Santa Maria del Mar" onerror="this.parentNode.innerHTML='<div class=act-fallback style=background:linear-gradient(135deg,#f5f3ff,#ede9fe)>⛪<span>Santa Maria del Mar</span></div>'">
+      <div class="act-time">16:30 – 17:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Basílica de Santa Maria del Mar</div>
+      <div class="act-desc">A joia escondida de Barcelona. Gótico catalão puro do séc. XIV — construída pelos comerciantes do bairro. Interior sem ornamentos excessivos, só estrutura: elegância absurda. Muito diferente da Sagrada Família. Entrada gratuita à tarde.</div>
+      <div class="tpt">
+        <div class="ico">🚶</div>
+        <div class="info"><strong>A pé do Barri Gòtic</strong><span>Via Laietana → Plaça de Santa Maria · 10 min</span></div>
+        <div class="eta">~10 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=41.38394,2.18304&travelmode=walking" target="_blank" class="maps-btn">📍 Navegar → Santa Maria del Mar</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">Nave central olhando para o altar — as colunas octagonais formam uma perspectiva perfeita de profundidade. Usar silhueta de pessoa parada no centro da nave com o altar iluminado ao fundo.</div>
+      </div>
+      <div class="costs"><span class="ct free">🆓 Grátis (tarde)</span></div>
+    </div>
+  </div>
+
+  <div class="adiv">metro ~15 min · sair às 18h30</div>
+
+  <!-- Bunkers del Carmel -->
+  <div class="act">
+    <div class="act-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Bunkers_del_Carmel_02.jpg/600px-Bunkers_del_Carmel_02.jpg" alt="Bunkers del Carmel" onerror="this.parentNode.innerHTML='<div class=act-fallback style=background:linear-gradient(135deg,#fef9c3,#fef08a)>🌅<span>Bunkers del Carmel</span></div>'">
+      <div class="act-time">19:00 – 20:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Bunkers del Carmel — Pôr do Sol</div>
+      <div class="act-desc">O mirante mais bonito de Barcelona. Ruínas de bunkers anti-aéreos da Guerra Civil. Vista 360°: Sagrada Família, mar, Tibidabo, toda a cidade. <strong>Pôr do sol: ~19:35 em 02/Out.</strong> Levar cerveja do supermercado (€1.50). Chegar às 19h para garantir lugar.</div>
+      <div class="tpt">
+        <div class="ico">🚇</div>
+        <div class="info"><strong>Metro L4 → Alfons X + subir 15–20 min a pé</strong><span>De Santa Maria del Mar: L4 Jaume I → Alfons X. Subida é íngreme mas curta.</span></div>
+        <div class="eta">~25 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=41.41501,2.16394&travelmode=transit" target="_blank" class="maps-btn">📍 Navegar → Bunkers del Carmel</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">Ficar no lado oeste dos bunkers com a cidade em silhueta e a Sagrada Família centralizada. Foto dos dois juntos com a cidade ao fundo — chegar 30 min antes do pôr do sol para luz dourada. Também: foto da cerveja em mão com Barcelona ao fundo, horizonte de mar e montanha.</div>
+      </div>
+      <div class="costs"><span class="ct free">🆓 Grátis</span><span class="ct">🍺 €1.50 cerveja super</span></div>
+    </div>
+  </div>
+
+  <!-- Jantar El Born -->
+  <div class="rest">
+    <div class="rl">🍽️ Jantar · El Born</div>
+    <div class="rname">El Xampanyet</div>
+    <div class="rtype">Cava + tapas catalanas · € (~€14–18pp)</div>
+    <div class="rrec">Bar histórico de 1929. O cava da casa é famoso em Barcelona. Pedir: <strong>cava da casa + anxoves (anchovas) + formatge (queijo)</strong>. Ambiente cheio de azulejos, garrafas antigas, muita história. Pode ter fila — chegar às 20h30.</div>
+    <div class="rbtns">
+      <a href="https://www.google.com/maps/search/?api=1&query=El+Xampanyet+Barcelona+Born" target="_blank" class="rbtn maps">📍 Google Maps</a>
+      <a href="https://www.instagram.com/explore/tags/elxampanyet/" target="_blank" class="rbtn insta">📷 #ElXampanyet</a>
+    </div>
+  </div>
+
+  <div class="dsum">
+    <div><div class="v bcn">~14 km</div><div class="lb">Caminhados</div></div>
+    <div><div class="v bcn">€80–100</div><div class="lb">Estimado pp</div></div>
+    <div><div class="v bcn">~9h</div><div class="lb">Atividades</div></div>
+  </div>
+</section>
+
+<!-- ===== DIA 5 ===== -->
+<section id="d5" class="day-section">
+  <div class="day-hdr bcn">
+    <div class="day-num bcn">Dia 5 · Sex</div>
+    <div class="day-info">
+      <h2>🏖️ Barcelona + ✈️ Voo Menorca</h2>
+      <div class="dsub">3 de Outubro · Dia em BCN + voo 21:30</div>
+      <div class="dflight men">✈️ BCN → MAH · 21:30 · Chega Menorca ~22:30</div>
+    </div>
+  </div>
+
+  <!-- Granja Viader -->
+  <div class="act">
+    <div class="act-img">
+      <div class="act-fallback" style="background:linear-gradient(135deg,#fff7ed,#fed7aa)">☕<span>Granja Viader</span></div>
+      <div class="act-time">08:00 – 08:45</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Granja Viader</div>
+      <div class="act-desc">A leiteria mais antiga de Barcelona, desde 1870. Especialidade: <strong>Cacaolat</strong> (achocolatado inventado aqui em 1931) ou suïssos (chocolate quente com chantilly). Azulejos históricos, mesas de mármore, ambiente intocado.</div>
+      <div class="tpt">
+        <div class="ico">🚶</div>
+        <div class="info"><strong>A pé de El Born/Gótico</strong><span>Carrer dels Xuclà, 4 · 10 min do Gótico</span></div>
+        <div class="eta">~10 min</div>
+      </div>
+      <a href="https://www.google.com/maps/search/?api=1&query=Granja+Viader+Barcelona" target="_blank" class="maps-btn">📍 Navegar → Granja Viader</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">A taça de Cacaolat vintage na mesa de mármore com a iluminação âmbar do local ao fundo — usar luz natural da janela. O ambiente de 1870 com azulejos brancos é o detalhe que faz a diferença na foto.</div>
+      </div>
+      <div class="costs"><span class="ct">☕ €6–8pp</span></div>
+    </div>
+  </div>
+
+  <div class="adiv">a pé ~10 min</div>
+
+  <!-- Mercado Santa Caterina -->
+  <div class="act">
+    <div class="act-img">
+      <div class="act-fallback" style="background:linear-gradient(135deg,#ecfdf5,#bbf7d0)">🏠<span>Mercado Santa Caterina</span></div>
+      <div class="act-time">08:45 – 09:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Mercado de Santa Caterina</div>
+      <div class="act-desc">A alternativa honesta à Boqueria: frequentado por locais, sem turismo predatório. O telhado ondulado de azulejos coloridos (projeto de Enric Miralles) é uma obra de arte. Comprar fruta fresca para comer no caminho.</div>
+      <div class="tpt">
+        <div class="ico">🚶</div>
+        <div class="info"><strong>A pé de Granja Viader</strong><span>Avinguda de Francesc Cambó, 16 · 10 min</span></div>
+        <div class="eta">~10 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=41.38513,2.17937&travelmode=walking" target="_blank" class="maps-btn">📍 Navegar → Mercado Santa Caterina</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">De fora do mercado, pegar o telhado ondulado de azulejos coloridos com o céu azul acima — usar ângulo amplo para capturar a ondulação completa. Manhã cedo com céu limpo é o melhor momento.</div>
+      </div>
+      <div class="costs"><span class="ct free">🆓 Grátis</span><span class="ct">🍊 €3–5 compras</span></div>
+    </div>
+  </div>
+
+  <div class="adiv">a pé ~20 min</div>
+
+  <!-- Barceloneta -->
+  <div class="act">
+    <div class="act-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Barcelona_-_Barceloneta.jpg/600px-Barcelona_-_Barceloneta.jpg" alt="Barceloneta" onerror="this.parentNode.innerHTML='<div class=act-fallback style=background:linear-gradient(135deg,#dbeafe,#93c5fd)>🏖️<span>Barceloneta</span></div>'">
+      <div class="act-time">10:00 – 12:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Praia de Barceloneta</div>
+      <div class="act-desc">A praia urbana de Barcelona. Em outubro a água está ~21°C — dá para nadar. Caminhar na orla, ver o Mediterrâneo antes de ir para Menorca. Kiosk de cerveja na praia: €3. Almoço aqui é a melhor opção do dia.</div>
+      <div class="tpt">
+        <div class="ico">🚶</div>
+        <div class="info"><strong>A pé de Santa Caterina</strong><span>Via Laietana → Barceloneta · ~20 min. Ou L4 → Barceloneta</span></div>
+        <div class="eta">~20 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=41.37862,2.18775&travelmode=walking" target="_blank" class="maps-btn">📍 Navegar → Barceloneta</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">Caminhar até o final da praia (lado norte) e fotografar a linha da costa com a cidade e a Barceloneta ao fundo. Manhã ou final de tarde com luz lateral. Reflexo na areia molhada funciona bem.</div>
+      </div>
+      <div class="costs"><span class="ct free">🆓 Grátis</span><span class="ct">🍺 €3 cerveja</span></div>
+    </div>
+  </div>
+
+  <div class="adiv">a pé ~15 min</div>
+
+  <!-- La Cova Fumada ALMOÇO -->
+  <div class="rest">
+    <div class="rl">🍽️ Almoço · Barceloneta (só almoço, fechar às 15h!)</div>
+    <div class="rname">La Cova Fumada</div>
+    <div class="rtype">Frutos do mar · € (~€15–20pp)</div>
+    <div class="rrec">Os inventores da <strong>bomba</strong> (croquete de batata frito — o snack mais famoso de Barceloneta). Sem reserva, sem cardápio, sem menu turístico. Chegar antes das 13h. Pedir: bombas, bacalhau à brasa, polvo. Fecha às 15h.</div>
+    <div class="rbtns">
+      <a href="https://www.google.com/maps/search/?api=1&query=La+Cova+Fumada+Barceloneta+Barcelona" target="_blank" class="rbtn maps">📍 Google Maps</a>
+      <a href="https://www.instagram.com/explore/tags/lacovafumada/" target="_blank" class="rbtn insta">📷 #LaCova</a>
+    </div>
+  </div>
+
+  <!-- Mirador Colom -->
+  <div class="act">
+    <div class="act-img">
+      <div class="act-fallback" style="background:linear-gradient(135deg,#eff6ff,#bfdbfe)">🗺️<span>Mirador Colom</span></div>
+      <div class="act-time">14:30 – 15:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Mirador Colom + fim de La Rambla</div>
+      <div class="act-desc">A coluna de Colombo apontando para o mar no final de La Rambla. Caminhada rápida subindo La Rambla — só passar sem comprar nada (caro e turístico). Sentar na Plaça de Catalunya para descansar antes do aeroporto.</div>
+      <div class="tpt">
+        <div class="ico">🚶</div>
+        <div class="info"><strong>A pé de Barceloneta</strong><span>15 min pela orla em direção ao porto</span></div>
+        <div class="eta">~15 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=41.37550,2.17820&travelmode=walking" target="_blank" class="maps-btn">📍 Navegar → Mirador Colom</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">De frente para o Mirador com o dedo de Colombo apontando para o mar — La Rambla atrás como fundo. Usar ângulo baixo para o monumento parecer imponente.</div>
+      </div>
+      <div class="costs"><span class="ct free">🆓 Grátis</span></div>
+    </div>
+  </div>
+
+  <!-- CHECK-OUT + AEROBUS -->
+  <div class="act">
+    <div class="act-img">
+      <div class="act-fallback" style="background:linear-gradient(135deg,#f0fdf4,#bbf7d0)">✈️<span>Aeroporto El Prat</span></div>
+      <div class="act-time">18:30 – 19:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Check-out + Aerobus para El Prat</div>
+      <div class="act-desc">Check-out do hostel (ou deixar mala na recepção durante o dia). Aerobus A1/A2 saindo da Plaça de Catalunya — o mais prático com bagagem. Chegar ao aeroporto às 19:30 para voo 21:30.</div>
+      <div class="tpt">
+        <div class="ico">🚌</div>
+        <div class="info"><strong>Aerobus A1/A2 de Plaça de Catalunya</strong><span>Saída a cada 5 min · ~35 min até T2</span></div>
+        <div class="eta">~35 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=41.38674,2.16999&travelmode=transit" target="_blank" class="maps-btn">📍 Navegar → Parada do Aerobus (Plaça Catalunya)</a>
+      <div class="costs"><span class="ct">🚌 €6.75pp Aerobus</span></div>
+    </div>
+  </div>
+
+  <div class="flight-card">
+    <div class="fio">✈️</div>
+    <div class="fi"><strong>Voo BCN → Menorca (MAH)</strong><span>21:30 · ~1h · Chega Menorca 22:30</span></div>
+    <div class="fi-cost"><div class="fv">€40–70</div><div class="fl">por pessoa</div></div>
+  </div>
+
+  <div class="wbox" style="margin:8px 10px"><strong>🏨 Check-in tardio em Ciudadela</strong>Avisar o hostel/guesthouse com antecedência que chegam após as 22h30. Ciudadela fica 45 min do aeroporto de Mahón — pegar táxi (~€45) ou carro alugado (buscar na chegada).</div>
+
+  <div class="dsum">
+    <div><div class="v bcn">~8 km</div><div class="lb">Caminhados</div></div>
+    <div><div class="v bcn">€55–75</div><div class="lb">Estimado pp</div></div>
+    <div><div class="v bcn">✈️ 21:30</div><div class="lb">Voo BCN→MAH</div></div>
+  </div>
+</section>
+
+<!-- ===== DIA 6 ===== -->
+<section id="d6" class="day-section">
+  <div class="day-hdr men">
+    <div class="day-num men">Dia 6 · Sáb</div>
+    <div class="day-info">
+      <h2>🏝️ Menorca — Ciudadela</h2>
+      <div class="dsub">4 de Outubro · Explorar a ilha · Reservar barco</div>
+    </div>
+  </div>
+
+  <!-- Ciudadela -->
+  <div class="act">
+    <div class="act-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Ciudadela_de_Menorca_01.jpg/600px-Ciudadela_de_Menorca_01.jpg" alt="Ciudadela" onerror="this.parentNode.innerHTML='<div class=act-fallback style=background:linear-gradient(135deg,#ecfdf5,#a7f3d0)>🏰<span>Ciudadela de Menorca</span></div>'">
+      <div class="act-time">10:00 – 12:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Ciudadela — Casco Antigo</div>
+      <div class="act-desc">A cidade histórica mais bonita de Menorca. Percurso: <strong>Plaça d'es Born</strong> (centro com obelisco e Palácio Torresaura) → <strong>Catedral de Menorca</strong> (gótica com fachada árabe, entrada grátis) → <strong>Carrer de Ses Voltes</strong> (rua com arcos árabes — a mais fotogênica) → <strong>Porto de Ciudadela</strong>.</div>
+      <div class="tpt">
+        <div class="ico">🚶</div>
+        <div class="info"><strong>Centro de Ciudadela — tudo a pé</strong><span>Hostel/guesthouse no centro velho. Raio de 800m.</span></div>
+        <div class="eta">Tudo a pé</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=39.99990,3.83700&travelmode=walking" target="_blank" class="maps-btn">📍 Navegar → Centro de Ciudadela</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">Carrer de Ses Voltes ao fim da tarde — a luz dourada de outubro atravessa os arcos árabes brancos criando sombras dramáticas. Fotografia em perspectiva com a rua se estreitando ao fundo.</div>
+      </div>
+      <div class="costs"><span class="ct free">🆓 Grátis</span></div>
+    </div>
+  </div>
+
+  <div class="adiv">a pé ~5 min</div>
+
+  <!-- Reservar Barco -->
+  <div class="act">
+    <div class="act-img">
+      <div class="act-fallback" style="background:linear-gradient(135deg,#e0f2fe,#7dd3fc)">⛵<span>Porto de Ciudadela</span></div>
+      <div class="act-time">12:30 – 13:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Porto de Ciudadela — Reservar Barco para Amanhã</div>
+      <div class="act-desc">Falar pessoalmente com operadoras de barco no porto. <strong>Barco privado com skipper</strong> (recomendado para o pedido): €200–350 total, vocês dois + skipper. Dizer que vai pedir em casamento — o skipper vai ajudar a criar o momento. Semi-privado: €50–90pp.</div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=39.99960,3.82900&travelmode=walking" target="_blank" class="maps-btn">📍 Navegar → Porto de Ciudadela</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">De cima do porto olhando para baixo, com os barcos coloridos refletidos na água turquesa. Melhor no início da manhã quando a água está mais calma.</div>
+      </div>
+      <div class="costs"><span class="ct">⛵ €100–175pp (privado)</span><span class="ct warn">⚠️ Fechar reserva hoje</span></div>
+    </div>
+  </div>
+
+  <div class="adiv">carro ~20 min</div>
+
+  <!-- Cala Turqueta -->
+  <div class="act">
+    <div class="act-img">
+      <div class="act-fallback" style="background:linear-gradient(135deg,#cffafe,#67e8f9)">🌊<span>Cala Turqueta</span></div>
+      <div class="act-time">14:30 – 17:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Cala Turqueta — Preview das Calas</div>
+      <div class="act-desc">A primeira experiência com as calas de Menorca. Água verde-esmeralda, pedras calcárias brancas ao redor, pinheiros descendo até a beira d'água. Em outubro a água está ~22°C — nadar! Estacionar na entrada e caminhar 15 min pela trilha. Prepare-se para o que vem amanhã.</div>
+      <div class="tpt">
+        <div class="ico">🚗</div>
+        <div class="info"><strong>Carro desde Ciudadela — rota sul</strong><span>ME-1 → sinalização para Cala Turqueta · ~20 min</span></div>
+        <div class="eta">~20 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=39.95680,3.89850&travelmode=driving" target="_blank" class="maps-btn">📍 Navegar → Cala Turqueta</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">Da pedra à esquerda da entrada da praia (subir ~3m) — a enseada completa com arco de pinheiros enquadrando a água turquesa abaixo. Usar modo panorâmico. A transparência da água no primeiro plano é destaque.</div>
+      </div>
+      <div class="costs"><span class="ct free">🆓 Grátis</span><span class="ct">⛽ combustível incluso</span></div>
+    </div>
+  </div>
+
+  <!-- Jantar porto -->
+  <div class="rest">
+    <div class="rl">🍽️ Jantar · Porto de Ciudadela</div>
+    <div class="rname">Es Tast de Na Sílvia</div>
+    <div class="rtype">Frutos do mar menorquinos · €€ (~€20–28pp)</div>
+    <div class="rrec">Pedir: <strong>calamars a la planxa</strong> (lula grelhada), <strong>gambes a la planxa</strong> (camarão grelhado), <strong>pa amb oli</strong> (pão com azeite e tomate — entrada típica balear). Vinho branco local: DO Binissalem.</div>
+    <div class="rbtns">
+      <a href="https://www.google.com/maps/search/?api=1&query=Es+Tast+de+Na+Silvia+Ciudadela+Menorca" target="_blank" class="rbtn maps">📍 Google Maps</a>
+      <a href="https://www.instagram.com/explore/tags/ciudadelarestaurante/" target="_blank" class="rbtn insta">📷 Buscar no IG</a>
+    </div>
+  </div>
+
+  <div class="dsum">
+    <div><div class="v men">~6 km</div><div class="lb">Caminhados</div></div>
+    <div><div class="v men">€65–120</div><div class="lb">Estimado pp</div></div>
+    <div><div class="v men">🚗 ~20km</div><div class="lb">De carro</div></div>
+  </div>
+</section>
+
+<!-- ===== DIA 7 — PEDIDO ===== -->
+<section id="d7" class="day-section">
+  <div class="day-hdr men">
+    <div class="day-num men" style="background:linear-gradient(135deg,#667eea,#764ba2)">💍 DIA DO PEDIDO</div>
+    <div class="day-info">
+      <h2>💍 Cala Macarelleta</h2>
+      <div class="dsub">5 de Outubro · Menorca → Barco → Proposta → Mahón</div>
+    </div>
+  </div>
+
+  <!-- PROPOSAL CARD -->
+  <div class="prop-card">
+    <div class="pce">💍</div>
+    <h3>Cala Macarelleta</h3>
+    <p>Enseada de ~100m de largura, fechada por penhascos calcários brancos de 20–30m. Água verde-esmeralda transparente com fundo visível a 5m de profundidade. Pinheiros descendo até a beira d'água. A entrada pelo canal entre os penhascos é o momento cinematográfico.</p>
+    <div class="prop-tip">🎯 Combinar antes com o skipper: <em>"vou pedir em casamento em Macarelleta, me dê uns minutos privados quando ancorar"</em>. Ele vai ajudar a criar o momento. Levar cava/espumante já gelado a bordo (comprar na manhã no supermercado).</div>
+  </div>
+
+  <!-- Café da Manhã -->
+  <div class="act">
+    <div class="act-img">
+      <div class="act-fallback" style="background:linear-gradient(135deg,#fff7ed,#fed7aa)">☀️<span>Manhã no Porto</span></div>
+      <div class="act-time">07:00 – 09:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Café da Manhã + Preparação</div>
+      <div class="act-desc">Café tranquilo no porto. Comprar no supermercado: espumante/cava (€8–15) + saco estanque para celular (€3–5). Levar protetor solar, snorkel se possível. Embarcar no barco às 10h.</div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=39.99960,3.82900&travelmode=walking" target="_blank" class="maps-btn">📍 Navegar → Porto de Ciudadela (embarque)</a>
+      <div class="costs"><span class="ct">🥂 €8–15 espumante</span><span class="ct">📱 €3–5 saco estanque</span></div>
+    </div>
+  </div>
+
+  <!-- BARCO -->
+  <div class="act">
+    <div class="act-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Cala_Macarella.jpg/600px-Cala_Macarella.jpg" alt="Cala Macarella" onerror="this.parentNode.innerHTML='<div class=act-fallback style=background:linear-gradient(135deg,#cffafe,#22d3ee)>🌊<span>Cala Macarella</span></div>'">
+      <div class="act-time">10:00 – 15:00</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Passeio de Barco — 5 horas</div>
+      <div class="act-desc">Rota: Ciudadela → <strong>Cala Son Saura</strong> (1ª parada, nadar) → <strong>Cala Turqueta</strong> → <strong>Cala Macarella</strong> (almoço/lanche) → <strong>⭐ Cala Macarelleta</strong> (entrar pelo canal entre os penhascos — o PEDIDO) → retorno Ciudadela.</div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=39.95100,3.92250&travelmode=driving" target="_blank" class="maps-btn">📍 Ver Cala Macarelleta no Maps</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto do Pedido</div>
+        <div class="ptext">Colocar o celular em modo burst ANTES do pedido — o skipper pode segurar ou apoiar numa superfície. A foto mais bonita é o momento de surpresa com os penhascos brancos e água turquesa como fundo. Com bom saco estanque dá para fotografar de dentro da água também.</div>
+      </div>
+      <div class="costs"><span class="ct">⛵ €100–175pp (privado)</span><span class="ct men">💍 O momento</span></div>
+    </div>
+  </div>
+
+  <div class="adiv">celebração + descanso · 15:00–16:30</div>
+
+  <!-- Monte Toro (opcional) -->
+  <div class="act">
+    <div class="act-img">
+      <div class="act-fallback" style="background:linear-gradient(135deg,#fef9c3,#fde047)">⛰️<span>Monte Toro</span></div>
+      <div class="act-time">16:30 – 17:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Monte Toro (no caminho para Mahón)</div>
+      <div class="act-desc">O ponto mais alto de Menorca (357m) — vista 360° de toda a ilha. Santuário da Virgem do séc. XVII no topo. Fica no caminho de Ciudadela para Mahón — parada de 30 min que vale muito. Chegar a Mahón depois.</div>
+      <div class="tpt">
+        <div class="ico">🚗</div>
+        <div class="info"><strong>Ciudadela → Monte Toro → Mahón</strong><span>Monte Toro fica no centro da ilha. Rota: Ciudadela → Es Mercadal → Monte Toro → Mahón. ~1h total</span></div>
+        <div class="eta">~1h total</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=39.98840,4.10210&travelmode=driving" target="_blank" class="maps-btn">📍 Navegar → Monte Toro</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">Vista panorâmica 360° — capturar com foto panorâmica em modo automático. No final do dia a luz dourada de outubro ilumina toda a ilha. Os dois juntos com o oceano ao fundo dos dois lados.</div>
+      </div>
+      <div class="costs"><span class="ct free">🆓 Grátis</span></div>
+    </div>
+  </div>
+
+  <!-- Mahón -->
+  <div class="act">
+    <div class="act-img">
+      <div class="act-fallback" style="background:linear-gradient(135deg,#e0f2fe,#38bdf8)">⚓<span>Porto de Mahón</span></div>
+      <div class="act-time">18:00 – 20:00</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Mahón — Check-in + Porto</div>
+      <div class="act-desc">Capital de Menorca com o maior porto natural do Mediterrâneo (7km de comprimento). Check-in em hotel próximo ao aeroporto de MAH — importante pois amanhã acordam às 05:30 para voo 08:25. Passear pelo porto ao entardecer.</div>
+      <div class="wbox"><strong>⚠️ Voo amanhã às 08:25 — acordar às 05:30</strong>Aeroporto MAH fica 10 min do centro de Mahón. Estar no check-in às 06:30.</div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=39.88830,4.26500&travelmode=driving" target="_blank" class="maps-btn">📍 Navegar → Centro de Mahón</a>
+      <div class="ptip">
+        <div class="plabel">📸 Foto Instagramável</div>
+        <div class="ptext">Porto de Mahón ao entardecer — barcos refletidos na água com as casas coloridas da orla ao fundo. Uma das silhuetas de porto mais bonitas do Mediterrâneo.</div>
+      </div>
+      <div class="costs"><span class="ct">🏨 Hotel Mahón ~€35pp</span></div>
+    </div>
+  </div>
+
+  <!-- Jantar especial Mahón -->
+  <div class="rest">
+    <div class="rl">🍽️ Jantar de Celebração · Mahón</div>
+    <div class="rname">Mercat des Peix ou similar (Mahón centro)</div>
+    <div class="rtype">Frutos do mar e caldereta · €€€ (~€30–45pp)</div>
+    <div class="rrec">A noite para gastar um pouco mais. Pedir: <strong>caldereta de llagosta menorquina</strong> (o prato mais icônico de Menorca — lagosta em caldo) ou <strong>langostinos a la planxa</strong>. Vinho branco de Menorca (DO Binissalem).</div>
+    <div class="rbtns">
+      <a href="https://www.google.com/maps/search/?api=1&query=restaurante+caldereta+lagosta+Mao+Menorca" target="_blank" class="rbtn maps">📍 Buscar no Maps</a>
+      <a href="https://www.instagram.com/explore/tags/calderetamenorca/" target="_blank" class="rbtn insta">📷 #CalderetaMenorca</a>
+    </div>
+  </div>
+
+  <div class="dsum">
+    <div><div class="v men">~3 km</div><div class="lb">Caminhados</div></div>
+    <div><div class="v men">€130–220</div><div class="lb">Estimado pp</div></div>
+    <div><div class="v men">💍 Sim</div><div class="lb">Pedido feito!</div></div>
+  </div>
+</section>
+
+<!-- ===== DIA 8 ===== -->
+<section id="d8" class="day-section">
+  <div class="day-hdr">
+    <div class="day-num">Dia 8 · Seg</div>
+    <div class="day-info">
+      <h2>✈️ Menorca → Madrid</h2>
+      <div class="dsub">6 de Outubro · Voo 08:25 · Último dia em Madrid</div>
+      <div class="dflight">✈️ MAH → MAD · 08:25 · Chega Madrid ~09:30</div>
+    </div>
+  </div>
+
+  <div class="wbox" style="margin:8px 10px"><strong>⏰ Acordar 05:30 — aeroporto MAH às 06:30</strong>Hotel perto do MAH → 10 min de carro/taxi até o aeroporto. Devolver carro alugado no aeroporto (se for o caso).</div>
+
+  <div class="flight-card">
+    <div class="fio">✈️</div>
+    <div class="fi"><strong>Menorca (MAH) → Madrid (MAD)</strong><span>08:25 · ~1h · Chega ~09:30</span></div>
+    <div class="fi-cost"><div class="fv">€50–90</div><div class="fl">por pessoa</div></div>
+  </div>
+
+  <!-- Madrid chegada -->
+  <div class="act">
+    <div class="act-img">
+      <div class="act-fallback" style="background:linear-gradient(135deg,#fef3c7,#fde68a)">🌇<span>Madrid — Última Manhã</span></div>
+      <div class="act-time">10:00 – 13:00</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Chegada Madrid + Chueca / Retiro</div>
+      <div class="act-desc">Podem estar cansados do voo cedo — ritmo mais leve. <strong>Chueca</strong> é o bairro gay de Madrid, com arquitetura belíssima e cafés ótimos. Ou voltar ao Retiro para uma última caminhada no parque. Bairro de Salamanca também vale se quiserem ver a zona mais elegante da cidade.</div>
+      <div class="tpt">
+        <div class="ico">🚇</div>
+        <div class="info"><strong>Metro do aeroporto T4 para o centro</strong><span>L8 de Nuevos Ministerios → ou Metro L10 → Gran Vía. ~45 min do T4.</span></div>
+        <div class="eta">~45 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=40.42300,-3.69900&travelmode=transit" target="_blank" class="maps-btn">📍 Navegar → Chueca (Madrid)</a>
+      <div class="costs"><span class="ct">🚇 €1.50pp metro (Metrobús)</span></div>
+    </div>
+  </div>
+
+  <!-- Sobrino de Botín ALMOÇO ESPECIAL -->
+  <div class="rest">
+    <div class="rl">🍽️ Almoço Especial · Último em Madrid</div>
+    <div class="rname">Sobrino de Botín</div>
+    <div class="rtype">Cozinha madrilena clássica · €€€ (~€35–45pp)</div>
+    <div class="rrec">O restaurante mais antigo do mundo segundo o Guinness (desde 1725). Pedir: <strong>cochinillo asado</strong> (leitão assado no forno de madeira de 300 anos) ou <strong>cordero asado</strong> (cordeiro). Uma experiência única. Reservar em botin.es</div>
+    <div class="rbtns">
+      <a href="https://www.google.com/maps/search/?api=1&query=Sobrino+de+Botin+Madrid" target="_blank" class="rbtn maps">📍 Google Maps</a>
+      <a href="https://www.instagram.com/sobrinodebotin/" target="_blank" class="rbtn insta">📷 @sobrinodebotin</a>
+    </div>
+  </div>
+
+  <!-- Gran Vía de volta -->
+  <div class="act">
+    <div class="act-img">
+      <div class="act-fallback" style="background:linear-gradient(135deg,#ffe4e6,#fecdd3)">🌆<span>Gran Vía · Despedida</span></div>
+      <div class="act-time">16:00 – 19:00</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Gran Vía + La Latina · Despedida de Madrid</div>
+      <div class="act-desc">Última tarde europeia. Caminhar pela Gran Vía mais uma vez, sentar em um bar de La Latina, comprar algum souvenir se quiser (evitar as lojas turísticas, preferir artesanato em mercados locais). Última caña com tapa.</div>
+      <div class="costs"><span class="ct free">🆓 Grátis</span></div>
+    </div>
+  </div>
+
+  <div class="dsum">
+    <div><div class="v">~8 km</div><div class="lb">Caminhados</div></div>
+    <div><div class="v">€60–80</div><div class="lb">Estimado pp</div></div>
+    <div><div class="v">✈️ 08:25</div><div class="lb">Voo manhã</div></div>
+  </div>
+</section>
+
+<!-- ===== DIA 9 ===== -->
+<section id="d9" class="day-section">
+  <div class="day-hdr">
+    <div class="day-num">Dia 9 · Ter</div>
+    <div class="day-info">
+      <h2>✈️ Voo de Volta — 13:40</h2>
+      <div class="dsub">7 de Outubro · Última manhã · Check-in fecha 12:55</div>
+      <div class="dflight">MAD → LIS 13:40 → GRU 17:00 (chega SP 23:15)</div>
+    </div>
+  </div>
+
+  <!-- Último café -->
+  <div class="act">
+    <div class="act-img">
+      <div class="act-fallback" style="background:linear-gradient(135deg,#fef9c3,#fde047)">☕<span>Último café em Madrid</span></div>
+      <div class="act-time">08:00 – 09:30</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Último Café + Caminhada Final</div>
+      <div class="act-desc">Acordar com calma. Café con leche + tostada con tomate y aceite em qualquer bar de bairro — o café da manhã espanhol que vão sentir falta. Última caminhada pela Gran Vía ou Puerta del Sol antes do aeroporto.</div>
+      <div class="costs"><span class="ct">☕ €4pp</span></div>
+    </div>
+  </div>
+
+  <!-- Aeroporto -->
+  <div class="act">
+    <div class="act-img">
+      <div class="act-fallback" style="background:linear-gradient(135deg,#e0e7ff,#c7d2fe)">🛫<span>Aeroporto T2 Barajas</span></div>
+      <div class="act-time">11:00 – 13:40</div>
+    </div>
+    <div class="act-body">
+      <div class="act-name">Metro → Aeroporto T2 + Embarque</div>
+      <div class="act-desc">Check-in fecha às 12:55. Sair para o aeroporto às 11h. Conexão em Lisboa T1 (4h20) — tempo para pastel de nata e café português no aeroporto.</div>
+      <div class="tpt">
+        <div class="ico">🚇</div>
+        <div class="info"><strong>Metro L8 de Nuevos Ministerios → Aeropuerto T1-T2-T3</strong><span>22 min · Nuevos Ministerios fica na L1, L6, L10</span></div>
+        <div class="eta">~22 min</div>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=40.47189,-3.56228&travelmode=transit" target="_blank" class="maps-btn">📍 Navegar → Aeroporto T2 Barajas</a>
+      <div class="costs"><span class="ct">🚇 €5pp aeroporto</span></div>
+    </div>
+  </div>
+
+  <div class="flight-card">
+    <div class="fio">🛫</div>
+    <div class="fi"><strong>MAD → LIS 13:40 · LIS → GRU 17:00</strong><span>Chega São Paulo 23:15 · Terminal 3</span></div>
+    <div class="fi-cost"><div class="fv">Já pago</div><div class="fl">incluso</div></div>
+  </div>
+
+  <div class="dsum">
+    <div><div class="v">~3 km</div><div class="lb">Caminhados</div></div>
+    <div><div class="v">€15</div><div class="lb">Estimado pp</div></div>
+    <div><div class="v">🏠</div><div class="lb">Voltando!</div></div>
+  </div>
+
+  <!-- TOTAL SUMMARY -->
+  <div style="background:linear-gradient(135deg,#009ee3,#005fa3);color:#fff;margin:8px 10px 24px;border-radius:18px;padding:24px;text-align:center">
+    <div style="font-size:28px;margin-bottom:10px">🇪🇸✈️💍</div>
+    <div style="font-size:18px;font-weight:900;margin-bottom:6px">Total Estimado da Viagem</div>
+    <div style="font-size:13px;opacity:.85;margin-bottom:18px">Além dos voos internacionais (já pagos)</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:center">
+      <div style="background:rgba(255,255,255,.15);border-radius:12px;padding:12px"><div style="font-size:22px;font-weight:900">~€950</div><div style="font-size:11px;opacity:.8;margin-top:2px">Por pessoa</div></div>
+      <div style="background:rgba(255,255,255,.15);border-radius:12px;padding:12px"><div style="font-size:22px;font-weight:900">~R$5.700</div><div style="font-size:11px;opacity:.8;margin-top:2px">Em reais</div></div>
+      <div style="background:rgba(255,255,255,.15);border-radius:12px;padding:12px"><div style="font-size:22px;font-weight:900">~80 km</div><div style="font-size:11px;opacity:.8;margin-top:2px">Caminhados total</div></div>
+      <div style="background:rgba(255,255,255,.15);border-radius:12px;padding:12px"><div style="font-size:22px;font-weight:900">9 dias</div><div style="font-size:11px;opacity:.8;margin-top:2px">De viagem</div></div>
+    </div>
+  </div>
+</section>
+
+<a href="#top" class="fab">↑</a>
+
+<script>
+// Highlight active day in nav based on scroll
+const sections = document.querySelectorAll('.day-section, #checklist');
+const navLinks = document.querySelectorAll('.day-nav a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 80) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.remove('sel');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('sel');
+  });
+});
+
+// Checkbox interactivity
+document.querySelectorAll('.cb').forEach(cb => {
+  cb.addEventListener('click', () => {
+    cb.style.background = cb.style.background ? '' : '#34a853';
+    cb.style.borderColor = cb.style.borderColor === '#34a853' ? '#d4a017' : '#34a853';
+  });
+});
+</script>
+</body>
+</html>
