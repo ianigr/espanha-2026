@@ -161,6 +161,15 @@ s{text-decoration:none;font-style:normal;color:#777;font-size:12px;display:block
 
 /* ── FAB ── */
 .fab{position:fixed;bottom:24px;right:16px;width:46px;height:46px;background:#009ee3;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;box-shadow:0 4px 16px rgba(0,158,227,.4);z-index:99}
+
+/* ── HOME BASE CARD ── */
+.hb{background:#fff;margin:8px 10px;border-radius:16px;border:2px solid #009ee3;padding:14px 16px;display:flex;align-items:center;gap:12px}
+.hb-ico{font-size:28px;flex-shrink:0}
+.hb-info{flex:1}
+.hb-label{font-size:10px;font-weight:900;color:#009ee3;text-transform:uppercase;letter-spacing:.09em;margin-bottom:4px}
+.hb-addr{font-size:15px;font-weight:800;color:#1a1a1a;line-height:1.3}
+.hb-sub{font-size:12px;color:#888;margin-top:2px}
+.hb-btn{display:flex;align-items:center;justify-content:center;gap:5px;background:#009ee3;color:#fff;border-radius:10px;padding:8px 14px;font-size:13px;font-weight:700;white-space:nowrap;text-decoration:none}
 </style>
 </head>
 <body>
@@ -302,6 +311,7 @@ function renderDay(d){
     else if(it.type==='fc') html+=flightCard(it);
     else if(it.type==='sp') html+=`<div class="sp"><div class="se">${it.e}</div><h3>${it.ti}</h3><p>${it.ds}</p>${it.tip?`<div class="st">${it.tip}</div>`:''}</div>`;
     else if(it.type==='warn') html+=`<div class="wbox" style="margin:8px 10px"><b>⚠️ ${it.b}</b>${it.t}</div>`;
+    else if(it.type==='home') html+=`<div class="hb"><div class="hb-ico">🏠</div><div class="hb-info"><div class="hb-label">${it.lb}</div><div class="hb-addr">${it.addr}</div><div class="hb-sub">${it.sub}</div></div><a href="${it.mu}" target="_blank" class="hb-btn">📍 Maps</a></div>`;
   }
 
   for(const r of (d.rs||[])) html+=rest(r);
@@ -325,7 +335,7 @@ DAYS.push({
   km:'~12 km',hr:'~9h',co:'~€50pp',
   ag:[
     ['10:05','✈️ Pouso T2','','saída rápida — sem bagagem despachada'],
-    ['11:00','🏨 Check-in hostel','','área Sol/Gran Vía'],
+    ['11:00','🏨 Check-in','','Calle de la Victoria, 2 · 1º Dcha · 28012'],
     ['11:30','🛍️ Gran Vía — compras + fotos','','Primark · Lefties · Sephora (escorregador) · Adidas · Nike · placa "Gran Vía"'],
     ['14:30','🏰 Plaza de España → Palácio Real','','fachada + Almudena + Plaza de Oriente'],
     ['15:30','🦑 Plaza Mayor','','bocadillo de calamares + Puerta del Sol'],
@@ -335,15 +345,16 @@ DAYS.push({
     ['20:30','🍽️ Jantar La Latina','','tapas Calle Cava Baja'],
   ],
   it:[
-    {type:'act',ts:'10:05',te:'11:00',loc:'Aeroporto T2',nm:'Aeroporto T2 → Hostel',img:'',emo:'🛬',g:['#e8f4ff','#c7e3f7'],
-     ds:'Sem bagagem despachada — saída direta para o metro. Seguir placas "Metro" dentro do T2.',
-     ti:'🚇',tt:'Linha 8 (rosa) → Nuevos Ministerios → L10 → Tribunal',td:'~40 min total',tc:'€5pp',
-     mu:'https://www.google.com/maps/dir/?api=1&destination=40.4168,-3.7038&travelmode=transit',
+    {type:'home',lb:'Nossa base em Madrid (D1 e D2)',addr:'Calle de la Victoria, 2 — 1º Dcha',sub:'Centro Madrid · 28012 · 2 min de Puerta del Sol',mu:'https://www.google.com/maps/search/?api=1&query=Calle+de+la+Victoria+2+Madrid+28012'},
+    {type:'act',ts:'10:05',te:'11:00',loc:'Aeroporto T2 → Calle de la Victoria',nm:'Aeroporto T2 → Hospedagem',img:'',emo:'🛬',g:['#e8f4ff','#c7e3f7'],
+     ds:'Sem bagagem despachada — saída direta para o metro. Seguir placas "Metro" dentro do T2. Destino: <strong>Calle de la Victoria, 2 — 1º Dcha</strong> (Centro Madrid 28012).',
+     ti:'🚇',tt:'L8 → Nuevos Ministerios → L10 → Sol → 3 min a pé',td:'~40 min total',tc:'€5pp',
+     mu:'https://www.google.com/maps/dir/?api=1&destination=Calle+de+la+Victoria+2+Centro+Madrid+28012&travelmode=transit',
      pt:'',cs:['💳 €5pp bilhete aeroporto especial']},
     {type:'route',i:'🚶',t:'A pé do hostel · ~15 min',c:'Grátis'},
     {type:'act',ts:'11:30',te:'14:30',loc:'Gran Vía — Compras + Fotos',nm:'Gran Vía — Fotos + Bloco de Compras',img:'granvia',emo:'🏛️',g:['#fff3e0','#ffe0b2'],
      ds:'A avenida mais icônica de Madrid. <strong>Foto da namorada na placa "Gran Vía"</strong> nas esquinas. Edificio Metrópolis, Telefónica, Capitol — arquitetura art déco. 🛍️ <strong>Bloco de compras na Gran Vía:</strong> <strong>Primark</strong> (nº 32, vários andares), <strong>Lefties</strong> (Gran Vía/Preciados), <strong>Sephora com escorregador</strong> (Calle Preciados, perto de Sol), <strong>Adidas</strong> e <strong>Nike</strong> também na área. Reservem 2–3h para as lojas.',
-     ti:'🚶',tt:'A pé do hostel',td:'10–15 min de Sol subindo Calle del Carmen',tc:'Grátis',
+     ti:'🚶',tt:'A pé — Calle de la Victoria, 2',td:'5 min subindo Calle del Carmen → Gran Vía',tc:'Grátis',
      mu:'https://www.google.com/maps/dir/?api=1&destination=40.41979,-3.69969&travelmode=walking',
      pt:'Ângulo baixo da Calle de Alcalá com calçada no primeiro plano, Edificio Metrópolis ao fundo. Placa "Gran Vía" na esquina com o Metrópolis desfocado atrás — foto perfeita para a namorada.',
      cs:['🆓 Grátis']},
@@ -396,7 +407,7 @@ DAYS.push({
   it:[
     {type:'act',ts:'08:30',te:'10:00',loc:'Parque del Retiro',nm:'Parque del Retiro + Barco no Lago',img:'retiro',emo:'🌿',g:['#dcfce7','#bbf7d0'],
      ds:'<strong>Estanque Grande:</strong> barco a remo €6/barco (2 pessoas), 45 min — de manhã está quase vazio, muito romântico. <strong>Palácio de Cristal</strong> a 3 min: ferro e vidro de 1887, entrada grátis.',
-     ti:'🚇',tt:'Metro L1 Sol → Retiro',td:'2 paradas, ~5 min',tc:'€1.50pp',
+     ti:'🚇',tt:'A pé até Sol (2 min) → Metro L1 → Retiro',td:'2 paradas, ~7 min total',tc:'€1.50pp',
      mu:'https://www.google.com/maps/dir/?api=1&destination=40.41531,-3.68442&travelmode=transit',
      pt:'De dentro do barco, namorada remando de frente com Palácio de Cristal ao fundo desfocado. Luz da manhã lateral. Palácio de Cristal refletido na própria estrutura de vidro.',
      cs:['🆓 Parque grátis','⛵ €3pp barco']},
