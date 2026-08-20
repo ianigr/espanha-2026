@@ -197,7 +197,7 @@ s{text-decoration:none;font-style:normal;color:#777;font-size:12px;display:block
     <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Tour Bernabéu</b><s>realmadrid.com · ~€35pp · Só seg–sex · você vai na terça 30/Set ✅</s></div></div>
     <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Sagrada Família</b><s>sagradafamilia.org · €35–45pp · OBRIGATÓRIO reservar antes</s></div></div>
     <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Barça Immersive Tour</b><s>fcbarcelona.com · €32pp · tour completo indisponível por obras</s></div></div>
-    <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>AVE/Ouigo Madrid→Barcelona</b><s>ouigo.es ou renfe.com · €9–30pp · reservar já</s></div></div>
+    <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Trem Madrid→Barcelona</b><s>✅ Reservado — 01/Out 13:42, Atocha → Sants</s></div></div>
     <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Voo BCN→Menorca · 03/Out 21:30</b><s>✅ Reservado — Vueling ou Air Nostrum</s></div></div>
     <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Voo Menorca→Madrid · 06/Out 08:25</b><s>✅ Reservado — Iberia ou Vueling</s></div></div>
     <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Carro em Menorca</b><s>Europcar/Avis aeroporto Mahón · €40–60/dia</s></div></div>
@@ -596,21 +596,21 @@ DAYS.push({
 // ── DIA 3 ──
 DAYS.push({
   id:'d3',city:'',nl:'D3',nd:'01/Out',lb:'Dia 3 · Qua',
-  ti:'🚄 Madrid → Barcelona',su:'1 de Outubro · AVE 13:00',fl:'🚆 Atocha→Sants · ~2h30 · Chega ~16h',
-  intro:'Dia de transição: manhã tranquila para se despedir de Madrid, AVE às 13h e chegada em Barcelona às 16h. Pouca coisa programada — descobrir o Passeig de Gràcia e El Born no primeiro contato com Barcelona. O trem é parte da experiência.',
-  km:'~13 km',hr:'AVE 2h30',co:'~€50pp',
+  ti:'🚄 Madrid → Barcelona',su:'1 de Outubro · Trem 13:42',fl:'🚆 Atocha→Sants · ~2h30 · Chega ~16:12',
+  intro:'Dia de transição: manhã tranquila para se despedir de Madrid, trem às 13:42 e chegada em Barcelona ~16:12. Pouca coisa programada — descobrir o Passeig de Gràcia e El Born no primeiro contato com Barcelona. O trem é parte da experiência.',
+  km:'~13 km',hr:'Trem 2h30',co:'~€50pp',
   ag:[
     ['08:00','☕ San Ginés','','último café madrileno'],
     ['09:00','🚶 Última caminhada','','Chueca ou Sol'],
     ['10:30','🧳 Check-out hostel','',''],
     ['12:00','🌿 Estação Atocha','','jardim tropical gigante — ver enquanto espera'],
-    ['12:30','🥪 Almoço rápido','','perto de Atocha'],
-    ['13:00','🚄 AVE/Ouigo','','Madrid Atocha → Barcelona Sants'],
-    ['16:00','🏨 Check-in hostel','','El Born/Gótico'],
-    ['16:30','🦎 Passeig de Gràcia','','Casa Batlló, La Pedrera, caminhar'],
-    ['18:30','🏛️ Barri Gòtic + Santa Maria del Mar','','Pont del Bisbe, Catedral, El Born'],
-    ['20:00','🍽️ Jantar','','Bar del Pla (El Born — ao lado)'],
-    ['21:15','🍰 Demartini Tiramisù','','sobremesa — 3 min a pé do jantar'],
+    ['13:00','🥪 Almoço rápido','','perto de Atocha'],
+    ['13:42','🚄 Trem Madrid→Barcelona','','Madrid Atocha → Barcelona Sants'],
+    ['16:30','🏨 Check-in hostel','','El Born/Gótico'],
+    ['17:00','🦎 Passeig de Gràcia','','Casa Batlló, La Pedrera, caminhar'],
+    ['19:00','🏛️ Barri Gòtic + Santa Maria del Mar','','Pont del Bisbe, Catedral, El Born'],
+    ['20:30','🍽️ Jantar','','Bar del Pla (El Born — ao lado)'],
+    ['21:45','🍰 Demartini Tiramisù','','sobremesa — 3 min a pé do jantar'],
   ],
   it:[
     {type:'act',ts:'12:00',te:'13:00',loc:'Estação Atocha',nm:'Estação de Atocha — jardim tropical',img:'atocha',emo:'🌿',g:['#d1fae5','#a7f3d0'],
@@ -619,15 +619,15 @@ DAYS.push({
      mu:'https://www.google.com/maps/dir/?api=1&destination=40.40650,-3.68974&travelmode=transit',
      pt:'Abóbada de ferro e vidro de 1851 com o jardim tropical embaixo — grande angular olhando para cima. Tartaruga na trilha com estrutura metálica ao fundo é uma foto única.',
      cs:['🆓 Jardim grátis','🥪 €6 almoço']},
-    {type:'fc',i:'🚄',nm:'AVE/Ouigo: Madrid Atocha → Barcelona Sants',dt:'13:00 · ~2h30 · Chega 15:30–16:00',pr:'€15–30'},
-    {type:'act',ts:'16:30',te:'18:30',loc:'Passeig de Gràcia',nm:'Passeig de Gràcia — Casa Batlló e La Pedrera',img:'batllo',emo:'🦎',g:['#fce7f3','#f9a8d4'],
+    {type:'fc',i:'🚄',nm:'Trem: Madrid Atocha → Barcelona Sants',dt:'13:42 · ~2h30 · Chega ~16:12 · Reservado ✅',pr:'Reservado'},
+    {type:'act',ts:'17:00',te:'19:00',loc:'Passeig de Gràcia',nm:'Passeig de Gràcia — Casa Batlló e La Pedrera',img:'batllo',emo:'🦎',g:['#fce7f3','#f9a8d4'],
      ds:'<strong>Casa Batlló</strong> (nº 43): fachada de Gaudí com escamas de dragão. <strong>La Pedrera / Casa Milà</strong> (nº 92): telhado ondulado absurdo — as duas são Gaudí obrigatório. Tudo grátis por fora. O calçadão hexagonal é design original de Gaudí (1906).',
      ti:'🚇',tt:'Metro L3 Sants → Passeig de Gràcia',td:'~10 min, 4 paradas',tc:'€2.55pp',
      mu:'https://www.google.com/maps/dir/?api=1&destination=41.39160,2.16503&travelmode=transit',
      pt:'Ângulo baixo do calçadão apontando para cima, fachada completa da Casa Batlló. O hexágono do calçadão no primeiro plano é um detalhe menos óbvio e muito bom.',
      cs:['🆓 Grátis (exterior)']},
     {type:'route',i:'🚇',t:'Metro L4 Passeig de Gràcia→Jaume I',c:'~10 min · €2.55pp'},
-    {type:'act',ts:'18:30',te:'20:00',loc:'Barri Gòtic',nm:'Barri Gòtic + Santa Maria del Mar',img:'santamaria',emo:'🏛️',g:['#f3f4f6','#e5e7eb'],
+    {type:'act',ts:'19:00',te:'20:30',loc:'Barri Gòtic',nm:'Barri Gòtic + Santa Maria del Mar',img:'santamaria',emo:'🏛️',g:['#f3f4f6','#e5e7eb'],
      ds:'Percurso rápido mas impactante: <strong>Pont del Bisbe</strong> (passarela gótica fotogênica) → <strong>Catedral de Barcelona</strong> (grátis) → <strong>Santa Maria del Mar</strong> (El Born, séc. XIV, grátis). Interior de elegância absurda. Fica ao lado do restaurante de jantar.',
      ti:'🚇',tt:'Metro L4 → Jaume I',td:'5 min de Passeig de Gràcia',tc:'€2.55pp',
      mu:'https://www.google.com/maps/dir/?api=1&destination=41.38210,2.17680&travelmode=transit',
@@ -636,10 +636,10 @@ DAYS.push({
     {type:'route',i:'🚶',t:'A pé · 5 min · El Born (jantar)',c:'Grátis'},
     {type:'route',i:'🚶',t:'A pé · ~3 min · Bar del Pla → Demartini Tiramisù',c:'Grátis'},
   ],
-  rs:[{lb:'🍽️ Jantar · El Born · 20:00',nm:'Bar del Pla',ty:'Tapas catalanas · €€ · ~€15–20pp',
+  rs:[{lb:'🍽️ Jantar · El Born · 20:30',nm:'Bar del Pla',ty:'Tapas catalanas · €€ · ~€15–20pp',
     rc:'Melhor custo-benefício de Barcelona para jantar. Pedir: <strong>croquetes de bacallà, patates braves, truita</strong>. Ambiente animado em El Born.',
     mu:'https://www.google.com/maps/search/?api=1&query=Bar+del+Pla+Barcelona+El+Born',ig:'https://www.instagram.com/bardelpla/',ih:'@bardelpla'},
-   {lb:'🍰 Sobremesa · El Born · 21:15',nm:'Demartini Tiramisù',ty:'Tiramisù artesanal · € · ~€5–7pp · balcão, sem mesas',
+   {lb:'🍰 Sobremesa · El Born · 21:45',nm:'Demartini Tiramisù',ty:'Tiramisù artesanal · € · ~€5–7pp · balcão, sem mesas',
     rc:'Tiramisù montado na hora, no copo, em 5 sabores diferentes. No coração de El Born — 3 min a pé do Bar del Pla. Aberto até 23h (seg-qui/dom) ou meia-noite (sex-sáb).',
     mu:'https://www.google.com/maps/search/?api=1&query=Demartini+Tiramisu+Carrer+dels+Carders+44+Barcelona',ig:'https://www.instagram.com/demartini.tiramisu/',ih:'@demartini.tiramisu'}]
 });
