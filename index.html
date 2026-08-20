@@ -202,7 +202,7 @@ s{text-decoration:none;font-style:normal;color:#777;font-size:12px;display:block
     <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Voo Menorca→Madrid · 06/Out 08:25</b><s>✅ Reservado — Iberia ou Vueling</s></div></div>
     <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Carro em Menorca</b><s>Europcar/Avis aeroporto Mahón · €40–60/dia</s></div></div>
     <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Barco Ciudadela · 05/Out</b><s>Privado com skipper: €200–350 total · reservar no porto</s></div></div>
-    <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Taberna La Bola (D2)</b><s>Reservar por telefone ou site</s></div></div>
+    <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Casa Labra (D2)</b><s>Sem reserva — taberna em pé, chegar e pedir no balcão</s></div></div>
     <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Sobrino de Botín (D8)</b><s>botin.es · reservar!</s></div></div>
     <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Hospedagem Madrid</b><s>✅ Reservado — Bravo Murillo 293 (D1–D2 e D8–D9)</s></div></div>
     <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Hospedagem Barcelona</b><s>Pendente — D3 e D4</s></div></div>
@@ -401,7 +401,7 @@ DAYS.push({
 DAYS.push({
   id:'d2',city:'',nl:'D2',nd:'30/Set',lb:'Dia 2 · Ter',
   ti:'⚽ Bernabéu + Retiro + Prado',su:'30 de Setembro · Madrid dia inteiro',fl:'',
-  intro:'O dia mais intenso em Madrid: tour no <strong>Bernabéu a pé</strong> (~25 min da hospedagem), loja oficial + Starbucks com vista do estádio. Tarde no Retiro com barco no lago. Às 18h: <strong>Museo del Prado de graça</strong> (gratuito 18h–20h) — Las Meninas, Goya, coleção permanente. Encerra com 99 Cheesecake e jantar especial na Taberna La Bola.',
+  intro:'O dia mais intenso em Madrid: tour no <strong>Bernabéu a pé</strong> (~25 min da hospedagem), loja oficial + Starbucks com vista do estádio. Tarde no Retiro com barco no lago. Às 18h: <strong>Museo del Prado de graça</strong> (gratuito 18h–20h) — Las Meninas, Goya, coleção permanente. Encerra com 99 Cheesecake e jantar barato e histórico na Casa Labra.',
   km:'~12 km',hr:'~11h',co:'~€60pp',
   ag:[
     ['08:00','☕ Café da manhã','','bar local na Bravo Murillo'],
@@ -413,7 +413,7 @@ DAYS.push({
     ['16:30','🚶 Paseo del Arte','','bairro dos museus · exterior Reina Sofía + Thyssen + Prado'],
     ['18:00','🎨 Museo del Prado — GRÁTIS','','gratuito 18h–20h · Las Meninas · Pinturas Negras de Goya'],
     ['20:00','🧀 99 Cheesecake','','Calle San Cristóbal, 17 · perto de Sol'],
-    ['21:00','🍽️ Taberna La Bola','','RESERVAR! · cocido madrileno'],
+    ['21:00','🍽️ Casa Labra','','sem reserva · bacalao frito e croquetas'],
   ],
   it:[
     {type:'act',ts:'09:30',te:'13:00',loc:'Santiago Bernabéu',nm:'Tour Bernabéu + Loja Oficial + Starbucks',img:'bernabeu',emo:'⚽',g:['#fffde7','#fff9c4'],
@@ -444,9 +444,9 @@ DAYS.push({
     {lb:'🧀 Após o Prado · 20:00',nm:'99 Cheesecake',ty:'Cheesecake · € · desde €0,99 · grab-and-go',
      rc:'A clássica começa em €0,99. Sabores especiais (pistacho, Lotus, Kinder, Cookies & Cream) de €2,59 a €4,59. Sem mesas — pegar e comer na rua caminhando para o jantar. <strong>Calle San Cristóbal, 17</strong> (perto de Sol).',
      mu:'https://www.google.com/maps/search/?api=1&query=99+Cheesecake+Calle+San+Cristobal+17+Madrid',ig:'https://www.instagram.com/99cheesecake/',ih:'@99cheesecake'},
-    {lb:'🍽️ Jantar Especial · 21:00 · RESERVAR!',nm:'Taberna La Bola',ty:'Cocido madrileno · €€ · ~€22–28pp',
-     rc:'Fundada em 1870. Serve o prato mais tradicional de Madrid: <strong>cocido madrileno</strong> — grão de bico com carne, chouriço e legumes. Não é turístico, é honesto. Reservar com antecedência obrigatório.',
-     mu:'https://www.google.com/maps/search/?api=1&query=Taberna+La+Bola+Madrid',ig:'https://www.instagram.com/tabernalabola/',ih:'@tabernalabola'},
+    {lb:'🍽️ Jantar · 21:00 · sem reserva',nm:'Casa Labra',ty:'Taberna histórica · € · ~€10–15pp',
+     rc:'Fundada em 1860 — taberna em pé no balcão, sem mesas. Pedir: <strong>tajadas de bacalao frito</strong> e <strong>croquetas de bacalao</strong> (a especialidade). Foi aqui que o PSOE foi fundado em 1879. <strong>Calle Tetuán, 12</strong>, perto de Sol.',
+     mu:'https://www.google.com/maps/search/?api=1&query=Casa+Labra+Calle+Tetuan+12+Madrid',ig:'https://www.instagram.com/casalabra1860/',ih:'@casalabra1860'},
   ]
 });
 
@@ -725,8 +725,8 @@ DAYS.push({
     {type:'route',i:'🍽️',t:'Almoço especial · 13:00',c:'RESERVAR em botin.es!'},
   ],
   rs:[
-    {lb:'🍽️ Almoço Especial · 13:00 · RESERVAR em botin.es!',nm:'Sobrino de Botín',ty:'Cozinha madrilena · €€€ · ~€35–45pp',
-     rc:'O restaurante mais antigo do mundo segundo o Guinness (desde 1725). Pedir: <strong>cochinillo asado</strong> (leitão assado no forno de madeira de 300 anos) ou cordeiro. Uma experiência única.',
+    {lb:'🍽️ Almoço Especial · 13:00 · RESERVAR em botin.es!',nm:'Sobrino de Botín',ty:'Cozinha madrilena · €€€ · menu fixo ~€43–50pp · à la carte c/ vinho até €70–80pp',
+     rc:'O restaurante mais antigo do mundo segundo o Guinness (desde 1725). Pedir: <strong>cochinillo asado</strong> (leitão assado no forno de madeira de 300 anos) ou cordeiro. É o único gasto "caro" que vale muito a pena — experiência irrepetível.',
      mu:'https://www.google.com/maps/search/?api=1&query=Sobrino+de+Botin+Madrid',ig:'https://www.instagram.com/sobrinodebotin/',ih:'@sobrinodebotin'},
   ]
 });
