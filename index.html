@@ -852,18 +852,23 @@ function init(){
     img.onerror=()=>{img.style.display='none';};
   });
 
-  // Nav highlight
-  const secs=document.querySelectorAll('.ds,#ck,#dc');
+  // Nav highlight — baseado no topo de cada seção vs. topo da viewport,
+  // em vez de IntersectionObserver com faixa estreita (falhava em seções
+  // curtas como #dc, que nunca chegavam a cruzar a faixa detectada).
+  const secs=[...document.querySelectorAll('.ds,#ck,#dc')];
   const links=document.querySelectorAll('.nav a');
-  const obs=new IntersectionObserver(es=>{
-    es.forEach(e=>{
-      if(e.isIntersecting){
-        const id=e.target.id;
-        links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+id));
-      }
-    });
-  },{rootMargin:'-40% 0px -55% 0px'});
-  secs.forEach(s=>obs.observe(s));
+  const navH=document.querySelector('.nav').offsetHeight;
+  function updateNav(){
+    let current=secs[0];
+    for(const s of secs){
+      if(s.getBoundingClientRect().top<=navH+10) current=s;
+      else break;
+    }
+    links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+current.id));
+  }
+  window.addEventListener('scroll',updateNav,{passive:true});
+  window.addEventListener('resize',updateNav);
+  updateNav();
 }
 
 document.addEventListener('DOMContentLoaded',init);
