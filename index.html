@@ -334,6 +334,7 @@ function renderDay(d){
     else if(it.type==='sp') html+=`<div class="sp"><div class="se">${it.e}</div><h3>${it.ti}</h3><p>${it.ds}</p>${it.tip?`<div class="st">${it.tip}</div>`:''}</div>`;
     else if(it.type==='warn') html+=`<div class="wbox" style="margin:8px 10px"><b>⚠️ ${it.b}</b>${it.t}</div>`;
     else if(it.type==='home') html+=`<div class="hb"><div class="hb-ico">🏠</div><div class="hb-info"><div class="hb-label">${it.lb}</div><div class="hb-addr">${it.addr}</div><div class="hb-sub">${it.sub}</div></div><a href="${it.mu}" target="_blank" class="hb-btn">📍 Maps</a></div>`;
+    else if(it.type==='rest') html+=rest(it);
   }
 
   for(const r of (d.rs||[])) html+=rest(r);
@@ -390,7 +391,7 @@ DAYS.push({
      pt:'Entrar pela arcada lateral e fotografar de dentro para fora — arcada enquadra a praça com estátua de Felipe III ao fundo.',
      cs:['🆓 Praça grátis']},
     {type:'route',i:'🚶',t:'A pé · 1 min · saída leste da Plaza Mayor',c:'Grátis'},
-    {type:'act',ts:'15:45',te:'16:30',loc:'Mercado San Miguel',nm:'Mercado San Miguel',img:'',emo:'🏪',g:['#fef3c7','#fde68a'],
+    {type:'act',ts:'15:45',te:'16:30',loc:'Mercado San Miguel',nm:'Mercado San Miguel',img:'sanmiguel',emo:'🏪',g:['#fef3c7','#fde68a'],
      ds:'Mercado gourmet de ferro do séc. XIX, literalmente ao lado da Plaza Mayor. Ostras, conservas, pintxos, jamón ibérico fatiado na hora, queijos. <strong>Estratégia:</strong> não fazer refeição completa — provar 2–3 petiscos e seguir. Aberto todos os dias 10h–24h.',
      ti:'🚶',tt:'Saída leste da Plaza Mayor',td:'1 min',tc:'Grátis',
      mu:'https://www.google.com/maps/dir/?api=1&destination=40.41554,-3.70526&travelmode=walking',
@@ -421,7 +422,7 @@ DAYS.push({
 DAYS.push({
   id:'d2',city:'',nl:'D2',nd:'30/Set',lb:'Dia 2 · Ter',
   ti:'⚽ Bernabéu + Retiro + Prado',su:'30 de Setembro · Madrid dia inteiro',fl:'',
-  intro:'O dia mais intenso em Madrid: tour no <strong>Bernabéu a pé</strong> (~25 min da hospedagem), loja oficial + Starbucks com vista do estádio. Tarde no Retiro com barco no lago. Às 18h: <strong>Museo del Prado de graça</strong> (gratuito 18h–20h) — Las Meninas, Goya, coleção permanente. Encerra com 99 Cheesecake e jantar barato e histórico na Casa Labra.',
+  intro:'O dia mais intenso em Madrid: tour no <strong>Bernabéu a pé</strong> (~25 min da hospedagem), loja oficial + Starbucks com vista do estádio. Tarde no Retiro com barco no lago. Às 18h: <strong>Museo del Prado de graça</strong> (gratuito 18h–20h) — Las Meninas, Goya, coleção permanente. Encerra com jantar barato e histórico na Casa Labra e sobremesa na 99 Cheesecake.',
   km:'~12 km',hr:'~11h',co:'~€60pp',
   ag:[
     ['08:00','☕ Café da manhã','','bar local na Bravo Murillo'],
@@ -432,8 +433,8 @@ DAYS.push({
     ['14:30','🌿 Parque del Retiro','','barco a remo no lago · 45 min'],
     ['16:30','🚶 Paseo del Arte','','bairro dos museus · exterior Reina Sofía + Thyssen + Prado'],
     ['18:00','🎨 Museo del Prado — GRÁTIS','','gratuito 18h–20h · Las Meninas · Pinturas Negras de Goya'],
-    ['20:00','🧀 99 Cheesecake','','Calle San Cristóbal, 17 · perto de Sol'],
-    ['21:00','🍽️ Casa Labra','','sem reserva · bacalao frito e croquetas'],
+    ['20:15','🍽️ Casa Labra','','~15 min a pé do Prado · sem reserva · bacalao frito'],
+    ['21:00','🧀 99 Cheesecake','','~5 min a pé da Casa Labra · Calle San Cristóbal, 17'],
   ],
   it:[
     {type:'act',ts:'09:30',te:'13:00',loc:'Santiago Bernabéu',nm:'Tour Bernabéu + Loja Oficial + Starbucks',img:'bernabeu',emo:'⚽',g:['#fffde7','#fff9c4'],
@@ -452,21 +453,23 @@ DAYS.push({
      pt:'De dentro do barco, namorada remando de frente com o lago ao fundo desfocado. Luz da tarde lateral.',
      cs:['🆓 Parque grátis','⛵ €6/barco (2 pessoas)']},
     {type:'route',i:'🚶',t:'A pé 5 min → Paseo del Arte · Barrio de los Museos',c:'Grátis · exterior Reina Sofía, Thyssen, Prado'},
-    {type:'act',ts:'18:00',te:'20:00',loc:'Museo del Prado',nm:'Museo del Prado — Entrada Gratuita',img:'',emo:'🎨',g:['#f3e8ff','#e9d5ff'],
+    {type:'act',ts:'18:00',te:'20:00',loc:'Museo del Prado',nm:'Museo del Prado — Entrada Gratuita',img:'prado',emo:'🎨',g:['#f3e8ff','#e9d5ff'],
      ds:'Um dos maiores museus do mundo — de graça nas últimas 2h do dia (ter–sab). Coleção permanente: Velázquez, Goya, El Greco, Rubens. <strong>Não perca:</strong> Las Meninas (Velázquez, sala 12) e as Pinturas Negras de Goya (sala 67). Dá para ver os destaques em 2h tranquilo.',
      ti:'🚶',tt:'A pé do Retiro · Paseo del Prado',td:'5 min',tc:'Grátis',
      mu:'https://www.google.com/maps/dir/?api=1&destination=40.41361,-3.69215&travelmode=walking',
      pt:'Las Meninas: posicionar centralizado à distância média — quadro enorme, detalhe do espelho ao fundo. Pinturas Negras: Saturno Devorando un Hijo — imponente de perto.',
      cs:['🆓 Grátis 18h–20h (ter-sab)']},
-    {type:'route',i:'🚶',t:'A pé 10 min → Sol · 99 Cheesecake',c:'Grátis'},
-  ],
-  rs:[
-    {lb:'🧀 Após o Prado · 20:00',nm:'99 Cheesecake',ty:'Cheesecake · € · desde €0,99 · grab-and-go',
-     rc:'A clássica começa em €0,99. Sabores especiais (pistacho, Lotus, Kinder, Cookies & Cream) de €2,59 a €4,59. Sem mesas — pegar e comer na rua caminhando para o jantar. <strong>Calle San Cristóbal, 17</strong> (perto de Sol).',
-     mu:'https://www.google.com/maps/search/?api=1&query=99+Cheesecake+Calle+San+Cristobal+17+Madrid',ig:'https://www.instagram.com/99cheesecake/',ih:'@99cheesecake'},
-    {lb:'🍽️ Jantar · 21:00 · sem reserva',nm:'Casa Labra',ty:'Taberna histórica · € · ~€10–15pp',
+    {type:'route',i:'🚶',t:'A pé · Prado → Casa Labra · ~15 min',c:'Grátis'},
+    {type:'rest',lb:'🍽️ Jantar · 20:15 · sem reserva',nm:'Casa Labra',ty:'Taberna histórica · € · ~€10–15pp',
      rc:'Fundada em 1860 — taberna em pé no balcão, sem mesas. Pedir: <strong>tajadas de bacalao frito</strong> e <strong>croquetas de bacalao</strong> (a especialidade). Foi aqui que o PSOE foi fundado em 1879. <strong>Calle Tetuán, 12</strong>, perto de Sol.',
      mu:'https://www.google.com/maps/search/?api=1&query=Casa+Labra+Calle+Tetuan+12+Madrid',ig:'https://www.instagram.com/casalabra1860/',ih:'@casalabra1860'},
+    {type:'route',i:'🚶',t:'A pé · Casa Labra → 99 Cheesecake · ~5 min',c:'Grátis'},
+    {type:'rest',lb:'🧀 Sobremesa · 21:00',nm:'99 Cheesecake',ty:'Cheesecake · € · desde €0,99 · grab-and-go',
+     rc:'A clássica começa em €0,99. Sabores especiais (pistacho, Lotus, Kinder, Cookies & Cream) de €2,59 a €4,59. Sem mesas — pegar e comer na rua. <strong>Calle San Cristóbal, 17</strong> (perto de Sol).',
+     mu:'https://www.google.com/maps/search/?api=1&query=99+Cheesecake+Calle+San+Cristobal+17+Madrid',ig:'https://www.instagram.com/99cheesecake/',ih:'@99cheesecake'},
+  ],
+  rs:[
+
   ]
 });
 
@@ -488,7 +491,8 @@ DAYS.push({
     ['21:30','✈️ Voo BCN→Menorca','','~1h'],
     ['22:30','🚐 Chegada + shuttle Record Go','','vans grátis do saguão até a loja — 2 min'],
     ['23:00','🚗 Retirada do carro','','Record Go — CNH física, passaporte, cartão de crédito físico'],
-    ['23:45','🏝️ Chegada hotel','dim','check-in Bluesea Lentiscos, Cala en Blanes (late check-in — avisar!)'],
+    ['23:45','🚗 Carro → Cala en Blanes','','~45 min de carro'],
+    ['00:30','🏝️ Chegada hotel','dim','já é 4/Out! check-in Bluesea Lentiscos (late check-in — avisar!)'],
   ],
   it:[
     {type:'act',ts:'09:30',te:'12:30',loc:'Barceloneta',nm:'Praia de Barceloneta',img:'barceloneta',emo:'🏖️',g:['#dbeafe','#93c5fd'],
@@ -497,10 +501,14 @@ DAYS.push({
      mu:'https://www.google.com/maps/dir/?api=1&destination=41.37862,2.18775&travelmode=walking',
      pt:'Final da praia (norte), linha da costa com a cidade ao fundo. Reflexo na areia molhada com luz da manhã funciona bem.',
      cs:['🆓 Grátis','💧 Água/suco']},
-    {type:'route',i:'🚶',t:'A pé · ~15 min',c:'Grátis'},
+    {type:'route',i:'🚶',t:'A pé · Praia → La Cova Fumada · ~8 min',c:'Grátis'},
+    {type:'rest',lb:'🦑 Almoço · 12:30 · FECHA ÀS 15H!',nm:'La Cova Fumada',ty:'Frutos do mar · € · ~€15–20pp · sem reserva · chegar antes 13h',
+     rc:'Os inventores da <strong>bomba</strong> (croquete de batata frito, o snack mais famoso de Barceloneta). Sem cardápio, sem reserva. Pedir: bombas, bacalhau à brasa, polvo.',
+     mu:'https://www.google.com/maps/search/?api=1&query=La+Cova+Fumada+Barceloneta+Barcelona',ig:'https://www.instagram.com/explore/tags/lacovafumada/',ih:'#LaCova'},
+    {type:'route',i:'🚶',t:'A pé · La Cova Fumada → Mirador Colom · ~15 min',c:'Grátis'},
     {type:'act',ts:'14:30',te:'16:00',loc:'Mirador Colom',nm:'Mirador Colom + La Rambla',img:'colom',emo:'🗺️',g:['#e0f2fe','#7dd3fc'],
      ds:'A coluna de Colombo no final de La Rambla. Subir La Rambla caminhando — entrar no <strong>Mercat de la Boqueria</strong> (à esquerda, nº 91): o mercado público mais famoso de Barcelona, a arquitetura de ferro e o visual são incríveis. Só comprar frutas ou algo pequeno — caro para refeição. Não comprar em barracas de turista.',
-     ti:'🚶',tt:'A pé de Barceloneta',td:'15 min pela orla',tc:'Grátis',
+     ti:'🚶',tt:'A pé de La Cova Fumada',td:'15 min pela orla',tc:'Grátis',
      mu:'https://www.google.com/maps/dir/?api=1&destination=41.37550,2.17820&travelmode=walking',
      pt:'De frente para o Mirador com La Rambla atrás como fundo. Ângulo baixo para o monumento parecer imponente.',
      cs:['🆓 Grátis']},
@@ -510,14 +518,13 @@ DAYS.push({
     {type:'act',ts:'23:00',te:'23:45',loc:'Aeroporto de Menorca',nm:'Retirada do Carro — Record Go',img:'',emo:'🚗',g:['#e0e7ff','#c7d2fe'],
      ds:'✅ Reservado — voucher T9C3NPX. Opel Corsa (ou similar), 5 lugares, 250km/dia. Ao desembarcar, ir ao ponto de encontro no estacionamento (saída do saguão de chegadas) — van gratuita da Record Go leva à loja em ~2 min. <strong>Levar:</strong> CNH física (não aceita digital), passaporte, cartão de crédito físico internacional em nome do condutor (caução a partir de €1.100 bloqueada no cartão). Tolerância de 29 min após 23:00.',
      w:'Loja: Carretera de Sant Climent, s/n, Mahón · Tel: +34 936 19 24 68',
-     tc:'€70,59 total (€12,84 já pago · €57,75 no destino)',
+     ti:'🚐',tt:'Van gratuita Record Go do saguão de chegadas até a loja',td:'~2 min',tc:'€70,59 total (€12,84 já pago · €57,75 no destino)',
+     mu:'https://www.google.com/maps/dir/?api=1&destination=Record+Go+Rent+a+Car+Carretera+de+Sant+Climent+Mahon+Menorca&travelmode=walking',
      cs:['🚗 Reservado — voucher T9C3NPX']},
-    {type:'route',i:'🚗',t:'Carro · Aeroporto MAH → Cala en Blanes · ~45 min',c:'Combustível incluso'},
-    {type:'home',lb:'Base em Menorca (D5, D6 e D7)',addr:'Avenida Los Delfines, s/n — Bluesea Lentiscos',sub:'Cala en Blanes · 07760 Ciudadela · ~10 min de carro do casco antigo · 6 min a pé da praia',mu:'https://www.google.com/maps/search/?api=1&query=Avenida+Los+Delfines+s%2Fn+Cala+en+Blanes+07760+Ciudadela+Menorca'},
+    {type:'route',i:'🚗',t:'Carro · Aeroporto MAH → Cala en Blanes · ~45 min (chegada ~00:30, já 4/Out)',c:'Combustível incluso'},
+    {type:'home',lb:'Base em Menorca (D5, D6 e D7)',addr:'Avenida Los Delfines, s/n — Bluesea Lentiscos',sub:'Cala en Blanes · 07760 Ciudadela · ~10 min de carro do casco antigo · 6 min a pé da praia · chegada ~00:30',mu:'https://www.google.com/maps/search/?api=1&query=Avenida+Los+Delfines+s%2Fn+Cala+en+Blanes+07760+Ciudadela+Menorca'},
   ],
-  rs:[{lb:'🍽️ Almoço · 12:30 · FECHA ÀS 15H!',nm:'La Cova Fumada',ty:'Frutos do mar · € · ~€15–20pp · sem reserva · chegar antes 13h',
-    rc:'Os inventores da <strong>bomba</strong> (croquete de batata frito, o snack mais famoso de Barceloneta). Sem cardápio, sem reserva. Pedir: bombas, bacalhau à brasa, polvo.',
-    mu:'https://www.google.com/maps/search/?api=1&query=La+Cova+Fumada+Barceloneta+Barcelona',ig:'https://www.instagram.com/explore/tags/lacovafumada/',ih:'#LaCova'}]
+  rs:[]
 });
 
 // ── DIA 6 ──
@@ -546,7 +553,7 @@ DAYS.push({
      mu:'https://www.google.com/maps/dir/?api=1&destination=39.99990,3.83700&travelmode=walking',
      pt:'Carrer de Ses Voltes ao fim da tarde — luz dourada atravessando os arcos árabes brancos. Perspectiva com a rua se estreitando ao fundo.',
      cs:['🆓 Grátis']},
-    {type:'route',i:'🚶',t:'A pé · ~5 min',c:'Grátis'},
+    {type:'route',i:'🚶',t:'A pé · Casco Antigo → Porto · ~5 min',c:'Grátis'},
     {type:'act',ts:'12:30',te:'13:30',loc:'Porto Ciudadela',nm:'Porto — Reservar Barco para Amanhã',img:'ciudadela',emo:'⛵',g:['#cffafe','#a5f3fc'],
      ds:'<strong>Reservar barco privado com skipper</strong> (€200–350 total) — falar com operadoras no porto. Dizer que querem parar bastante tempo em Cala Macarelleta. Semi-privado: €50–90pp. Não deixar para amanhã!',
      w:'Fechar a reserva do barco HOJE — para o passeio de amanhã.',
@@ -555,69 +562,74 @@ DAYS.push({
      pt:'De cima do porto olhando para baixo, barcos coloridos refletidos na água turquesa do porto de manhã cedo.',
      cs:['⛵ €100–175pp (privado recomendado)']},
     {type:'route',i:'🍽️',t:'Almoço porto · 13:30–15:00',c:''},
-    {type:'route',i:'🚗',t:'Carro · ~20 min sul',c:'Grátis (combustível incluso)'},
+    {type:'route',i:'🚗',t:'Carro · Porto → Cala Turqueta · ~20 min sul',c:'Combustível incluso'},
     {type:'act',ts:'15:00',te:'17:30',loc:'Cala Turqueta',nm:'Cala Turqueta — Preview das Calas',img:'macarella',emo:'🌊',g:['#cffafe','#67e8f9'],
      ds:'Primeira experiência com as calas de Menorca. Água verde-esmeralda, pedras calcárias brancas, pinheiros descendo. Em outubro ~22°C — dá para nadar! Estacionar na entrada + 15 min de trilha.',
      ti:'🚗',tt:'Carro Ciudadela → sul · ME-1',td:'~20 min',tc:'Combustível incluso',
      mu:'https://www.google.com/maps/dir/?api=1&destination=39.95680,3.89850&travelmode=driving',
      pt:'Da pedra à esquerda da entrada (subir ~3m) — enseada completa com pinheiros enquadrando a água turquesa. Transparência da água no primeiro plano é o destaque.',
      cs:['🆓 Grátis']},
-    {type:'route',i:'🚗',t:'Carro de volta · ~20 min',c:''},
+    {type:'route',i:'🚗',t:'Carro Cala Turqueta → Ciudadela · ~20 min',c:'Combustível incluso'},
+    {type:'act',ts:'17:50',te:'19:00',loc:'Bastió de Sa Font',nm:'Bastió de Sa Font — Pôr do Sol',img:'',emo:'🌅',g:['#fef9c3','#fde047'],
+     ds:'Antigo bastião das muralhas de Ciudadela, virado para o porto — o mirante local para ver o pôr do sol, com vista para os barcos ancorados abaixo.',
+     ti:'🚗',tt:'Carro de volta de Cala Turqueta',td:'~20 min',tc:'Combustível incluso',
+     mu:'https://www.google.com/maps/dir/?api=1&destination=Bastio+de+Sa+Font+Ciutadella+Menorca&travelmode=walking',
+     cs:['🆓 Grátis']},
+    {type:'route',i:'🚶',t:'A pé · Bastió de Sa Font → Es Tast de Na Sílvia · ~8 min',c:'Grátis'},
+    {type:'rest',lb:'🍽️ Jantar · Porto de Ciudadela · 19:30',nm:'Es Tast de Na Sílvia',ty:'Frutos do mar menorquinos · €€ · ~€20–28pp',
+     rc:'Pedir: <strong>calamars a la planxa</strong> (lula grelhada), <strong>pa amb oli</strong> (pão com azeite e tomate — entrada típica balear).',
+     mu:'https://www.google.com/maps/search/?api=1&query=Es+Tast+de+Na+Silvia+Ciudadela+Menorca',ig:'https://www.instagram.com/explore/tags/ciudadelarestaurante/',ih:'#CiudadelaMenorca'},
     {type:'route',i:'🚗',t:'Carro · Ciudadela → hotel (Cala en Blanes) · ~10 min · 21:00',c:'Combustível incluso'},
   ],
-  rs:[{lb:'🍽️ Jantar · Porto de Ciudadela · 19:30',nm:'Es Tast de Na Sílvia',ty:'Frutos do mar menorquinos · €€ · ~€20–28pp',
-    rc:'Pedir: <strong>calamars a la planxa</strong> (lula grelhada), <strong>pa amb oli</strong> (pão com azeite e tomate — entrada típica balear).',
-    mu:'https://www.google.com/maps/search/?api=1&query=Es+Tast+de+Na+Silvia+Ciudadela+Menorca',ig:'https://www.instagram.com/explore/tags/ciudadelarestaurante/',ih:'#CiudadelaMenorca'}]
+  rs:[]
 });
 
 // ── DIA 7 ──
 DAYS.push({
-  id:'d7',city:'M',nl:'🌊',nd:'05/Out',lb:'Passeio Especial',sp:true,
+  id:'d7',city:'M',nl:'D7',nd:'05/Out',lb:'Dia 7 · Dom',
   ti:'⛵ Passeio de Barco — Calas de Menorca',su:'5 de Outubro',fl:'',
-  intro:'O dia mais especial da viagem: 5 horas de barco pelas calas mais bonitas do sul de Menorca, com parada em Cala Macarelleta — uma enseada fechada por penhascos brancos com água verde-esmeralda. À tarde, Monte Toro para a vista 360° da ilha, e retorno ao hotel em Cala en Blanes para a última noite — sem trocar de hospedagem.',
+  intro:'Passeio de barco de 5 horas pelas calas mais bonitas do sul de Menorca — Cala Son Saura, Cala Turqueta, Cala Macarella e Cala Macarelleta, todas com água verde-esmeralda e penhascos calcários brancos. À tarde, Monte Toro para a vista 360° da ilha, e retorno ao hotel em Cala en Blanes para a última noite — sem trocar de hospedagem.',
   km:'~3 km',hr:'⛵ 5h barco · 🚗 ~1h20',co:'~€150pp',
   ag:[
     ['07:00','⏰ Acordar','',''],
     ['07:30','☕ Café manhã','','tranquilo no porto'],
-    ['08:30','🛒 Supermercado','','espumante + saco estanque para o celular'],
+    ['08:30','🛒 Mercado/farmácia','','saco estanque para o celular'],
     ['10:00','⛵ Embarcar','','porto de Ciudadela'],
-    ['10:30','🌊 Cala Son Saura','','1ª parada — nadar, snorkel'],
-    ['11:30','🌊 Cala Turqueta','',''],
-    ['12:30','🌊 Cala Macarella','','almoço/lanche a bordo'],
-    ['13:15','⭐ Cala Macarelleta','','PASSEIO ESPECIAL (enseada entre os penhascos)'],
-    ['15:00','⛵ Retorno porto','','Ciudadela'],
-    ['15:30','🥂 Celebração porto','',''],
-    ['16:30','🚗 Partir para Monte Toro','','~35 min de carro'],
-    ['17:15','⛰️ Monte Toro','','parada 45 min — vista 360°'],
-    ['18:00','🚗 Voltar para o hotel','','~35-40 min — Cala en Blanes'],
-    ['18:45','🏨 Chegada hotel','','Bluesea Lentiscos — banho, trocar de roupa'],
-    ['19:30','🍽️ Jantar especial','','Porto de Ciudadela — caldereta de lagosta'],
-    ['21:30','🛌 Dormir cedo!','dim','voo às 08:25 amanhã — acordar 05:15'],
+    ['10:30','📍 Cala Son Saura','','1ª parada — nadar, snorkel'],
+    ['11:30','📍 Cala Turqueta','',''],
+    ['12:30','📍 Cala Macarella','','almoço/lanche a bordo'],
+    ['13:15','📍 Cala Macarelleta','','enseada entre os penhascos'],
+    ['15:00','⛵ Retorno porto','','Ciudadela — desembarque e pagamento'],
+    ['15:30','🚗 Partir para Monte Toro','','~35 min de carro'],
+    ['16:05','⛰️ Monte Toro','','parada 45 min — vista 360°'],
+    ['16:50','🚗 Voltar para o hotel','','~35-40 min — Cala en Blanes'],
+    ['17:30','🏨 Chegada hotel','','Bluesea Lentiscos — banho, trocar de roupa'],
+    ['19:00','🍽️ Jantar','','Porto de Ciudadela — caldereta de lagosta'],
+    ['21:00','🛌 Dormir cedo!','dim','voo às 08:25 amanhã — acordar 05:15'],
   ],
   it:[
-    {type:'sp',e:'🌊',ti:'Cala Macarelleta — Passeio Especial',
-     ds:'Enseada de ~100m de largura, completamente fechada por penhascos calcários brancos de 20–30m. Água verde-esmeralda totalmente transparente — fundo visível a 5m de profundidade. Pinheiros descendo pelas encostas até a beira d\'água. A entrada pelo canal estreito entre os penhascos é o momento mais bonito do passeio.',
-     tip:'💡 Combinar com o skipper para parar mais tempo em Macarelleta — é a mais pequena e reservada das calas.'},
-    {type:'act',ts:'10:00',te:'15:00',loc:'Calas do Sul de Menorca',nm:'Passeio de Barco — 5 horas',img:'macarella',emo:'🌊',g:['#cffafe','#22d3ee'],
-     ds:'Rota: Porto Ciudadela → <strong>Cala Son Saura</strong> (nadar) → <strong>Cala Turqueta</strong> → <strong>Cala Macarella</strong> (almoço a bordo) → <strong>⭐ Cala Macarelleta</strong> (passeio especial) → retorno Ciudadela.',
+    {type:'act',ts:'10:00',te:'15:00',loc:'Calas do Sul de Menorca',nm:'Passeio de Barco — 5 horas',img:'macarella',emo:'⛵',g:['#cffafe','#22d3ee'],
+     ds:'Rota: Porto Ciudadela → <strong>Cala Son Saura</strong> (nadar) → <strong>Cala Turqueta</strong> → <strong>Cala Macarella</strong> (almoço a bordo) → <strong>Cala Macarelleta</strong> (retorno Ciudadela). Macarelleta é uma enseada de ~100m de largura, completamente fechada por penhascos calcários brancos de 20–30m, com água verde-esmeralda transparente — fundo visível a 5m de profundidade. Combinar com o skipper para parar mais tempo lá, é a mais pequena e reservada das calas.',
      ti:'⛵',tt:'Embarcar no porto de Ciudadela às 10h',td:'Barco privado ou semi-privado · 5h',tc:'Reservado ontem',
      mu:'https://www.google.com/maps/dir/?api=1&destination=39.95100,3.92250&travelmode=driving',
      pt:'De barco entrando pelo canal de Macarelleta — penhascos brancos emoldurando a água turquesa. Usar modo burst. Com saco estanque: fotografar de dentro da água olhando para os penhascos — perspectiva única.',
      cs:['⛵ €100–175pp (privado)','ou €50–90pp (semi-privado)']},
-    {type:'route',i:'🥂',t:'Celebração no porto · 15:30–16:30',c:''},
-    {type:'route',i:'🚗',t:'Carro Ciudadela → Monte Toro',c:'~35 min'},
-    {type:'act',ts:'17:15',te:'18:00',loc:'Monte Toro',nm:'Monte Toro — Vista 360° de Menorca',img:'montoro',emo:'⛰️',g:['#fef9c3','#fde047'],
-     ds:'O ponto mais alto de Menorca (357m). Santuário da Virgem séc. XVII no topo (grátis). Vista 360°: toda a ilha, Ciudadela ao oeste, Mahón ao leste. Ponto de retorno do passeio — parada de 45 min antes de voltar ao hotel.',
+    {type:'route',i:'🚗',t:'Carro Ciudadela → Monte Toro · ~35 min · sai 15:30',c:'Combustível incluso'},
+    {type:'act',ts:'16:05',te:'16:50',loc:'Monte Toro',nm:'Monte Toro — Vista 360° de Menorca',img:'montoro',emo:'⛰️',g:['#fef9c3','#fde047'],
+     ds:'O ponto mais alto de Menorca (357m). Santuário da Virgem séc. XVII no topo (grátis). Vista 360°: toda a ilha, Ciudadela ao oeste, Mahón ao leste. Parada de 45 min antes de voltar ao hotel.',
      ti:'🚗',tt:'Carro · Es Mercadal → Monte Toro',td:'~35 min de Ciudadela',tc:'Combustível incluso',
      mu:'https://www.google.com/maps/dir/?api=1&destination=39.98840,4.10210&travelmode=driving',
      pt:'Foto panorâmica automática 360° com a ilha inteira dos dois lados. Os dois com o oceano ao fundo dos dois lados — única vista assim em toda a viagem.',
      cs:['🆓 Grátis']},
-    {type:'route',i:'🚗',t:'Carro Monte Toro → hotel (Cala en Blanes)',c:'~35–40 min'},
+    {type:'route',i:'🚗',t:'Carro Monte Toro → hotel (Cala en Blanes) · ~35–40 min · chegada ~17:30',c:'Combustível incluso'},
+    {type:'route',i:'🚗',t:'Carro · hotel → Porto de Ciudadela · ~10 min',c:'Combustível incluso'},
+    {type:'rest',lb:'🍽️ Jantar · Porto de Ciudadela · 19:00',nm:'Café Balear',ty:'Frutos do mar + caldereta · €€€ · ~€35–62pp',
+     rc:'Um dos templos da caldereta em Menorca — os donos são pescadores e têm barco próprio, garantindo o produto. Pedir: <strong>caldereta de llagosta menorquina</strong> (o prato mais icônico da ilha, lagosta em caldo espesso). Pla de Sant Joan, 15, no porto de Ciudadela.',
+     mu:'https://www.google.com/maps/search/?api=1&query=Cafe+Balear+Pla+de+Sant+Joan+15+Ciutadella+Menorca',ig:'https://www.instagram.com/explore/tags/calderetamenorca/',ih:'#CalderetaMenorca'},
+    {type:'route',i:'🚗',t:'Carro · Porto → hotel (Cala en Blanes) · ~10 min',c:'Combustível incluso'},
     {type:'warn',b:'Amanhã: acordar às 05:15 — voo 08:25',t:'Aeroporto MAH fica ~45–50 min de carro de Cala en Blanes. Sair do hotel às 06:00, devolver carro na locadora do aeroporto, e estar no check-in às 06:45.'},
   ],
-  rs:[{lb:'🍽️ Jantar Especial · Porto de Ciudadela · 19:30',nm:'Café Balear',ty:'Frutos do mar + caldereta · €€€ · ~€35–62pp',
-    rc:'Um dos templos da caldereta em Menorca — os donos são pescadores e têm barco próprio, garantindo o produto. Pedir: <strong>caldereta de llagosta menorquina</strong> (o prato mais icônico da ilha, lagosta em caldo espesso). Pla de Sant Joan, 15, no porto de Ciudadela.',
-    mu:'https://www.google.com/maps/search/?api=1&query=Cafe+Balear+Pla+de+Sant+Joan+15+Ciutadella+Menorca',ig:'https://www.instagram.com/explore/tags/calderetamenorca/',ih:'#CalderetaMenorca'}],
+  rs:[],
   sum2:'⛵ 5h',sum2lbl:'Barco'
 });
 
@@ -668,35 +680,39 @@ DAYS.push({
      mu:'https://www.google.com/maps/dir/?api=1&destination=41.38210,2.17680&travelmode=transit',
      pt:'Pont del Bisbe: embaixo do arco olhando para cima — wide angle. Santa Maria del Mar: nave central em direção ao altar, silhueta de pessoa no centro com a luz do fundo.',
      cs:['🆓 Grátis']},
-    {type:'route',i:'🚶',t:'A pé · 5 min · El Born (jantar)',c:'Grátis'},
-    {type:'route',i:'🚶',t:'A pé · ~3 min · Bar del Pla → Demartini Tiramisù',c:'Grátis'},
+    {type:'route',i:'🚶',t:'A pé · Barri Gòtic → El Born (jantar) · ~5 min',c:'Grátis'},
+    {type:'rest',lb:'🍽️ Jantar · El Born · 20:30',nm:'Bar del Pla',ty:'Tapas catalanas · €€ · ~€15–20pp',
+     rc:'Melhor custo-benefício de Barcelona para jantar. Pedir: <strong>croquetes de bacallà, patates braves, truita</strong>. Ambiente animado em El Born.',
+     mu:'https://www.google.com/maps/search/?api=1&query=Bar+del+Pla+Barcelona+El+Born',ig:'https://www.instagram.com/bardelpla/',ih:'@bardelpla'},
+    {type:'route',i:'🚶',t:'A pé · Bar del Pla → Demartini Tiramisù · ~3 min',c:'Grátis'},
+    {type:'rest',lb:'🍰 Sobremesa · El Born · 21:45',nm:'Demartini Tiramisù',ty:'Tiramisù artesanal · € · ~€5–7pp · balcão, sem mesas',
+     rc:'Tiramisù montado na hora, no copo, em 5 sabores diferentes. No coração de El Born — 3 min a pé do Bar del Pla. Aberto até 23h (seg-qui/dom) ou meia-noite (sex-sáb).',
+     mu:'https://www.google.com/maps/search/?api=1&query=Demartini+Tiramisu+Carrer+dels+Carders+44+Barcelona',ig:'https://www.instagram.com/demartini.tiramisu/',ih:'@demartini.tiramisu'},
   ],
-  rs:[{lb:'🍽️ Jantar · El Born · 20:30',nm:'Bar del Pla',ty:'Tapas catalanas · €€ · ~€15–20pp',
-    rc:'Melhor custo-benefício de Barcelona para jantar. Pedir: <strong>croquetes de bacallà, patates braves, truita</strong>. Ambiente animado em El Born.',
-    mu:'https://www.google.com/maps/search/?api=1&query=Bar+del+Pla+Barcelona+El+Born',ig:'https://www.instagram.com/bardelpla/',ih:'@bardelpla'},
-   {lb:'🍰 Sobremesa · El Born · 21:45',nm:'Demartini Tiramisù',ty:'Tiramisù artesanal · € · ~€5–7pp · balcão, sem mesas',
-    rc:'Tiramisù montado na hora, no copo, em 5 sabores diferentes. No coração de El Born — 3 min a pé do Bar del Pla. Aberto até 23h (seg-qui/dom) ou meia-noite (sex-sáb).',
-    mu:'https://www.google.com/maps/search/?api=1&query=Demartini+Tiramisu+Carrer+dels+Carders+44+Barcelona',ig:'https://www.instagram.com/demartini.tiramisu/',ih:'@demartini.tiramisu'}]
+  rs:[]
 });
 
 // ── DIA 4 ──
 DAYS.push({
   id:'d4',city:'B',nl:'D4',nd:'02/Out',lb:'Dia 4 · Qui',
   ti:'🏛️ Barcelona — Dia Inteiro',su:'2 de Outubro · Sagrada + Camp Nou + Gótico + Bunkers',fl:'',
-  intro:'O dia mais intenso de Barcelona: Sagrada Família às 9h (chegar na hora é obrigatório), Camp Nou ao meio-dia, Barri Gòtic à tarde, Santa Maria del Mar e os Bunkers del Carmel para o pôr do sol. São ~14km mas cada hora tem uma energia diferente.',
-  km:'~14 km',hr:'~9h',co:'~€85pp',
+  intro:'O dia mais intenso de Barcelona: Sagrada Família às 9h (chegar na hora é obrigatório), Camp Nou ao meio-dia, Arc de Triomf + Parc de la Ciutadella à tarde, e os Bunkers del Carmel para o pôr do sol. São ~14km mas cada hora tem uma energia diferente.',
+  km:'~14 km',hr:'~10h',co:'~€85pp',
   ag:[
     ['08:00','☕ Café','','rápido no hostel'],
     ['08:30','🚇 Metro','','L2 ou L5 → Sagrada Família (~18 min)'],
     ['09:00','⛪ Sagrada Família','','CHEGAR ÀS 9H EXATAS · ~2h30'],
     ['11:30','🚇 Metro Camp Nou','','L5→Collblanc (~12 min) + 10 min a pé'],
     ['12:00','🔵 Camp Nou','','~1h30 de tour'],
-    ['13:30','🍽️ Almoço','','menú del día perto (~€12pp)'],
-    ['15:00','🌿 Parc de la Ciutadella','','relaxar, Arc de Triomf, passear — sem pressa'],
-    ['16:30','☕ El Born','','explorar o bairro, cafezinho, loja'],
-    ['18:00','🚇 Metro Bunkers','','L4→Alfons X (~15 min) + 15 min subindo a pé'],
+    ['13:30','🍽️ Almoço','','menú del día perto do estádio · ~1h'],
+    ['14:30','🚇 Metro → Arc de Triomf','','L5→Diagonal→L4 · ~30 min'],
+    ['15:00','🎗️ Arc de Triomf','','arco de tijolos da Expo de 1888'],
+    ['15:30','🌳 Parc de la Ciutadella','','Cascada Monumental, lago, zoo exterior'],
+    ['16:45','☕ El Born','','explorar o bairro, cafezinho, loja · ~1h'],
+    ['17:45','🚇 Metro Bunkers','','L4→Alfons X (~20 min) + 15-20 min subindo a pé'],
     ['19:00','🌅 Bunkers del Carmel','','pôr do sol 19:35 — chegar antes!'],
-    ['20:30','🍽️ Jantar','','El Xampanyet'],
+    ['20:30','🚇 Metro → El Born','','~25 min'],
+    ['21:00','🍽️ Jantar','','Bar del Pla'],
   ],
   it:[
     {type:'act',ts:'09:00',te:'11:30',loc:'Sagrada Família',nm:'Sagrada Família',img:'sagrada',emo:'⛪',g:['#fce7f3','#fbcfe8'],
@@ -713,28 +729,44 @@ DAYS.push({
      mu:'https://www.google.com/maps/dir/?api=1&destination=41.38087,2.12282&travelmode=transit',
      pt:'Mirante com vista das obras — foto histórica do estádio em transformação. Museu: troféu da Champions com a iluminação dourada.',
      cs:['🔵 ~€32pp · Barça Immersive Tour']},
-    {type:'route',i:'🍽️',t:'Almoço · 13:30–15:00',c:'menú del día perto · ~€12pp'},
-    {type:'route',i:'🌿',t:'Parc de la Ciutadella + Arc de Triomf · passeio leve',c:'~1h30 · Grátis'},
-    {type:'route',i:'🚇',t:'Metro L4 Barceloneta→Alfons X',c:'~15 min · €2.55pp + 15 min subindo'},
-    {type:'act',ts:'19:00',te:'20:30',loc:'Bunkers del Carmel',nm:'Bunkers del Carmel — Pôr do Sol',img:'',emo:'🌅',g:['#fef9c3','#fde047'],
+    {type:'route',i:'🍽️',t:'Almoço · menú del día perto do estádio · 13:30–14:30',c:'~€12pp'},
+    {type:'route',i:'🚇',t:'Metro L5 Collblanc → Diagonal → L4 Arc de Triomf',c:'~30 min · €2.55pp'},
+    {type:'act',ts:'15:00',te:'15:30',loc:'Arc de Triomf',nm:'Arc de Triomf',img:'',emo:'🎗️',g:['#fee2e2','#fecaca'],
+     ds:'Arco de tijolos vermelhos em estilo neomourisco, construído como portão de entrada principal da Exposição Universal de 1888. Fica bem na entrada do Parc de la Ciutadella, no Passeig de Lluís Companys — foto rápida e já segue para o parque.',
+     ti:'🚇',tt:'Metro L4 → Arc de Triomf',td:'~30 min de Camp Nou',tc:'€2.55pp',
+     mu:'https://www.google.com/maps/dir/?api=1&destination=41.39041,2.18120&travelmode=walking',
+     pt:'De baixo do arco olhando para cima em ângulo — os tijolos vermelhos e os relevos esculpidos enquadrando o céu.',
+     cs:['🆓 Grátis']},
+    {type:'route',i:'🚶',t:'A pé · Arc de Triomf → Parc de la Ciutadella · ~3 min',c:'Grátis'},
+    {type:'act',ts:'15:30',te:'16:45',loc:'Parc de la Ciutadella',nm:'Parc de la Ciutadella',img:'',emo:'🌳',g:['#dcfce7','#bbf7d0'],
+     ds:'O parque mais bonito do centro de Barcelona. <strong>Cascada Monumental</strong>: fonte monumental de 1888 com esculturas douradas — o jovem Gaudí colaborou no projeto. Lago com barcos a remo, exterior do Zoo de Barcelona, e o prédio do Parlament de Catalunya. Ótimo para sentar na grama e descansar.',
+     ti:'🚶',tt:'A pé do Arc de Triomf',td:'~3 min',tc:'Grátis',
+     mu:'https://www.google.com/maps/dir/?api=1&destination=41.38700,2.18470&travelmode=walking',
+     pt:'De frente para a Cascada Monumental, ângulo baixo pegando as esculturas douradas e a água caindo. Reflexo no lago ao lado em dia de sol.',
+     cs:['🆓 Grátis (zoo por fora)']},
+    {type:'route',i:'🚶',t:'A pé · Ciutadella → El Born · ~10 min',c:'Grátis'},
+    {type:'route',i:'☕',t:'El Born · explorar o bairro, cafezinho, loja · 16:45–17:45',c:'~€5pp café'},
+    {type:'route',i:'🚇',t:'Metro L4 El Born (Jaume I) → Alfons X + 15-20 min subindo a pé',c:'~20 min · €2.55pp'},
+    {type:'act',ts:'19:00',te:'20:30',loc:'Bunkers del Carmel',nm:'Bunkers del Carmel — Pôr do Sol',img:'bunkers',emo:'🌅',g:['#fef9c3','#fde047'],
      ds:'O mirante mais bonito de Barcelona. Ruínas de bunkers da Guerra Civil, vista 360°: Sagrada Família, mar, Tibidabo, toda a cidade. <strong>Pôr do sol: ~19:35 em 02/Out.</strong> Levar lanche do super. Chegar às 19h.',
      ti:'🚇',tt:'Metro L4 → Alfons X',td:'~15 min · depois 15–20 min subindo a pé',tc:'€2.55pp',
      mu:'https://www.google.com/maps/dir/?api=1&destination=41.41501,2.16394&travelmode=transit',
      pt:'Lado oeste dos bunkers com a cidade em silhueta, Sagrada Família centralizada e sol se pondo. Os dois sentados na borda com Barcelona embaixo — chegar 30 min antes.',
-     cs:['🆓 Grátis','🥪 €3–5 lanche do super'],img:'bunkers',emo:'🌅',g:['#fef9c3','#fde047']},
-    {type:'route',i:'🚇',t:'Metro L4 Alfons X→Jaume I',c:'~12 min · €2.55pp'},
+     cs:['🆓 Grátis','🥪 €3–5 lanche do super']},
+    {type:'route',i:'🚇',t:'Metro L4 Alfons X → Jaume I (El Born)',c:'~25 min · €2.55pp'},
+    {type:'rest',lb:'🍽️ Jantar · El Born · 21:00',nm:'Bar del Pla',ty:'Tapas catalanas · €€ · ~€15–20pp',
+     rc:'Melhor custo-benefício de Barcelona. Pedir: <strong>croquetes de bacallà, patates braves, anxoves (anchovas), truita de patates</strong>. Ambiente animado, comida excelente.',
+     mu:'https://www.google.com/maps/search/?api=1&query=Bar+del+Pla+Barcelona+El+Born',ig:'https://www.instagram.com/bardelpla/',ih:'@bardelpla'},
   ],
-  rs:[{lb:'🍽️ Jantar · El Born · 20:30',nm:'Bar del Pla',ty:'Tapas catalanas · €€ · ~€15–20pp',
-    rc:'Melhor custo-benefício de Barcelona. Pedir: <strong>croquetes de bacallà, patates braves, anxoves (anchovas), truita de patates</strong>. Ambiente animado, comida excelente.',
-    mu:'https://www.google.com/maps/search/?api=1&query=Bar+del+Pla+Barcelona+El+Born',ig:'https://www.instagram.com/bardelpla/',ih:'@bardelpla'}]
+  rs:[]
 });
 
 // ── DIA 8 ──
 DAYS.push({
   id:'d8',city:'',nl:'D8',nd:'06/Out',lb:'Dia 8 · Seg',
   ti:'✈️ Menorca → Madrid',su:'6 de Outubro · Voo 08:25 · Último dia',fl:'✈️ MAH→MAD 08:25 · Chega 10:05',
-  intro:'Voo cedinho de volta a Madrid. Chegada às 9h30 com um dia inteiro pela frente. Ritmo leve: última caminhada pela Gran Vía ou pelo bairro de Chueca, almoço barato e histórico na La Casa del Abuelo (mais de 100 anos, mesma família) e tarde livre. A última noite europeia da viagem.',
-  km:'~8 km',hr:'~7h',co:'~€70pp',
+  intro:'Voo cedinho de volta a Madrid. Chegada às 9h30 com um dia inteiro pela frente. Ritmo leve: última caminhada pela Gran Vía ou pelo bairro de Chueca, almoço bem barato numa taberna de 1966 perto da Plaza Mayor e tarde livre. A última noite europeia da viagem.',
+  km:'~8 km',hr:'~7h',co:'~€60pp',
   ag:[
     ['05:15','⏰ Acordar em Cala en Blanes','',''],
     ['06:00','🚗 Aeroporto MAH','','~45–50 min de carro · devolver até 07:00 (Record Go)'],
@@ -743,7 +775,7 @@ DAYS.push({
     ['10:30','🚇 Metro centro','','do aeroporto T4 ~45 min'],
     ['11:00','☕ Café + tostada','',''],
     ['11:30','🚶 Última caminhada','','Gran Vía ou bairro de Chueca'],
-    ['13:00','🍽️ La Casa del Abuelo','','sem reserva · gambas al ajillo'],
+    ['13:00','🍽️ Casa Revuelta','','sem reserva · bacalao rebozado · perto da Plaza Mayor'],
     ['15:00','🚶 Tarde livre','','La Latina, Retiro ou compras'],
     ['19:30','🚶 Última caminhada','','La Latina — tapas de sobremesa'],
     ['21:00','🍽️ Jantar despedida','',''],
@@ -757,13 +789,12 @@ DAYS.push({
      mu:'https://www.google.com/maps/dir/?api=1&destination=40.42300,-3.69900&travelmode=transit',
      pt:'Gran Vía de manhã — com mais calma que no primeiro dia. Mesma placa, outra perspectiva depois de 9 dias de viagem.',
      cs:['🆓 Grátis']},
-    {type:'route',i:'🍽️',t:'Almoço · 13:00 · sem reserva',c:'~€15–25pp'},
+    {type:'route',i:'🚶',t:'A pé · Gran Vía/Chueca → Casa Revuelta · ~15 min',c:'Grátis'},
+    {type:'rest',lb:'🍽️ Almoço · 13:00 · sem reserva',nm:'Casa Revuelta',ty:'Taberna histórica · € · ~€5–10pp',
+     rc:'Taberna de 1966, clássica das tajadas de bacalao em Madrid — bem mais barata que a maioria. Pedir: <strong>bacalao rebozado</strong> (a especialidade da casa), pincho ~€5,10. Fecha às 16h. <strong>Calle Latoneros, 3</strong>, perto da Plaza Mayor.',
+     mu:'https://www.google.com/maps/search/?api=1&query=Casa+Revuelta+Calle+Latoneros+3+Madrid',ig:'https://www.instagram.com/explore/tags/casarevuelta/',ih:'#CasaRevuelta'},
   ],
-  rs:[
-    {lb:'🍽️ Almoço · 13:00 · sem reserva',nm:'La Casa del Abuelo',ty:'Taberna histórica · €€ · ~€15–25pp',
-     rc:'Mais de 100 anos na mesma família, mesmo endereço, azulejos originais. Especialidade: <strong>gambas al ajillo</strong> (camarão no alho, na chapa) e gambas a la plancha. Pedir com o vinho da casa. <strong>Calle de la Victoria, 12</strong>, perto da Puerta del Sol.',
-     mu:'https://www.google.com/maps/search/?api=1&query=La+Casa+del+Abuelo+Calle+Victoria+12+Madrid',ig:'https://www.instagram.com/lacasadelabuelo1906/',ih:'@lacasadelabuelo1906'},
-  ]
+  rs:[]
 });
 
 // ── DIA 9 ──
@@ -802,6 +833,7 @@ function init(){
   // Build nav
   const nav=document.getElementById('nav');
   nav.innerHTML='<a href="#ck"><span class="n">📋</span><span class="d">antes</span></a>'+
+    '<a href="#dc"><span class="n">📄</span><span class="d">docs</span></a>'+
     DAYS.map(d=>`<a href="#${d.id}"><span class="n">${d.nl}</span><span class="d">${d.nd}</span></a>`).join('');
 
   // Render days
