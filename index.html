@@ -36,6 +36,17 @@ s{text-decoration:none;font-style:normal;color:#777;font-size:12px;display:block
 .ci b{font-size:13px;color:#333;display:block;margin-bottom:1px}
 .ci s{font-size:12px;color:#777;font-style:normal}
 
+/* ── DOCUMENTOS ── */
+.dc{background:#eff8ff;border-top:3px solid #009ee3;padding:18px 16px}
+.dc h3{font-size:13px;font-weight:900;color:#00618a;margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em}
+.di{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #d6ecfb}
+.di:last-child{border-bottom:none}
+.di-ico{font-size:22px;flex-shrink:0}
+.di-info{flex:1;min-width:0}
+.di-info b{font-size:13px;color:#333;display:block;margin-bottom:1px}
+.di-info s{font-size:12px;color:#777;font-style:normal}
+.di-btn{display:flex;align-items:center;justify-content:center;gap:5px;background:#009ee3;color:#fff;border-radius:10px;padding:8px 12px;font-size:12px;font-weight:700;white-space:nowrap;text-decoration:none;flex-shrink:0}
+
 /* ── DAY SECTION ── */
 .ds{scroll-margin-top:54px}
 .dh{background:#fff;padding:13px 16px 11px;border-top:6px solid #009ee3;margin-top:14px;display:flex;align-items:flex-start;gap:12px;border-bottom:1px solid #eee}
@@ -197,10 +208,10 @@ s{text-decoration:none;font-style:normal;color:#777;font-size:12px;display:block
     <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Tour Bernabéu</b><s>realmadrid.com · ~€35pp · Só seg–sex · você vai na terça 30/Set ✅</s></div></div>
     <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Sagrada Família</b><s>sagradafamilia.org · €35–45pp · OBRIGATÓRIO reservar antes</s></div></div>
     <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Barça Immersive Tour</b><s>fcbarcelona.com · €32pp · tour completo indisponível por obras</s></div></div>
-    <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Trem Madrid→Barcelona</b><s>✅ Reservado — 01/Out 13:42, Atocha → Sants</s></div></div>
+    <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Trem Madrid→Barcelona</b><s>✅ Reservado — OUIGO 01/Out 13:42, localizador 3NT8FK</s></div></div>
     <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Voo BCN→Menorca · 03/Out 21:30</b><s>✅ Reservado — Vueling ou Air Nostrum</s></div></div>
     <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Voo Menorca→Madrid · 06/Out 08:25</b><s>✅ Reservado — Iberia ou Vueling</s></div></div>
-    <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Carro em Menorca</b><s>Europcar/Avis aeroporto Mahón · €40–60/dia</s></div></div>
+    <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Carro em Menorca</b><s>✅ Reservado — Record Go, 3–6/Out, voucher T9C3NPX</s></div></div>
     <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Barco Ciudadela · 05/Out</b><s>Privado com skipper: €200–350 total · reservar no porto</s></div></div>
     <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Casa Labra (D2)</b><s>Sem reserva — taberna em pé, chegar e pedir no balcão</s></div></div>
     <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>La Casa del Abuelo (D8)</b><s>Sem reserva — taberna histórica, €15–25pp</s></div></div>
@@ -209,6 +220,15 @@ s{text-decoration:none;font-style:normal;color:#777;font-size:12px;display:block
     <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Hospedagem Menorca</b><s>✅ Reservado — Bluesea Lentiscos, Cala en Blanes (D5–D7)</s></div></div>
     <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Mala de mão 10kg</b><s>55×40×25cm — viagem toda de carry-on. Pesar antes!</s></div></div>
     <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>€200 em espécie por pessoa</b><s>Bares locais preferem dinheiro</s></div></div>
+  </div>
+</section>
+
+<!-- DOCUMENTOS -->
+<section id="dc">
+  <div class="dc">
+    <h3>📄 Documentos da Viagem</h3>
+    <div class="di"><div class="di-ico">🚗</div><div class="di-info"><b>Voucher do Carro — Menorca</b><s>Record Go · 3–6/Out · voucher T9C3NPX</s></div><a href="documentos/voucher-carro-menorca.pdf" target="_blank" class="di-btn">📄 Abrir</a></div>
+    <div class="di"><div class="di-ico">🚄</div><div class="di-info"><b>Bilhete OUIGO — Madrid → Barcelona</b><s>01/Out 13:42 · localizador 3NT8FK</s></div><a href="documentos/bilhete-trem-madrid-barcelona.pdf" target="_blank" class="di-btn">📄 Abrir</a></div>
   </div>
 </section>
 
@@ -466,7 +486,9 @@ DAYS.push({
     ['17:30','🚌 Aerobus Plaça Catalunya','','→ El Prat T2 (~35 min)'],
     ['18:30','✈️ Check-in aeroporto','',''],
     ['21:30','✈️ Voo BCN→Menorca','','~1h'],
-    ['22:30','🏝️ Chegada Menorca','dim','check-in Bluesea Lentiscos, Cala en Blanes (late check-in — avisar!)'],
+    ['22:30','🚐 Chegada + shuttle Record Go','','vans grátis do saguão até a loja — 2 min'],
+    ['23:00','🚗 Retirada do carro','','Record Go — CNH física, passaporte, cartão de crédito físico'],
+    ['23:45','🏝️ Chegada hotel','dim','check-in Bluesea Lentiscos, Cala en Blanes (late check-in — avisar!)'],
   ],
   it:[
     {type:'act',ts:'09:30',te:'12:30',loc:'Barceloneta',nm:'Praia de Barceloneta',img:'barceloneta',emo:'🏖️',g:['#dbeafe','#93c5fd'],
@@ -484,7 +506,13 @@ DAYS.push({
      cs:['🆓 Grátis']},
     {type:'route',i:'💤',t:'Descanso + check-out hostel · até 17:30',c:''},
     {type:'route',i:'🚌',t:'Aerobus Plaça Catalunya → El Prat T2',c:'~35 min · €6.75pp'},
-    {type:'fc',i:'✈️',nm:'Voo BCN → Menorca (MAH) · 21:30',dt:'~1h · Chega Menorca ~22:30 · Táxi aeroporto→Cala en Blanes ~€48–55 (~45 min)',pr:'€40–70'},
+    {type:'fc',i:'✈️',nm:'Voo BCN → Menorca (MAH) · 21:30',dt:'~1h · Chega Menorca ~22:30',pr:'€40–70'},
+    {type:'act',ts:'23:00',te:'23:45',loc:'Aeroporto de Menorca',nm:'Retirada do Carro — Record Go',img:'',emo:'🚗',g:['#e0e7ff','#c7d2fe'],
+     ds:'✅ Reservado — voucher T9C3NPX. Opel Corsa (ou similar), 5 lugares, 250km/dia. Ao desembarcar, ir ao ponto de encontro no estacionamento (saída do saguão de chegadas) — van gratuita da Record Go leva à loja em ~2 min. <strong>Levar:</strong> CNH física (não aceita digital), passaporte, cartão de crédito físico internacional em nome do condutor (caução a partir de €1.100 bloqueada no cartão). Tolerância de 29 min após 23:00.',
+     w:'Loja: Carretera de Sant Climent, s/n, Mahón · Tel: +34 936 19 24 68',
+     tc:'€70,59 total (€12,84 já pago · €57,75 no destino)',
+     cs:['🚗 Reservado — voucher T9C3NPX']},
+    {type:'route',i:'🚗',t:'Carro · Aeroporto MAH → Cala en Blanes · ~45 min',c:'Combustível incluso'},
     {type:'home',lb:'Base em Menorca (D5, D6 e D7)',addr:'Avenida Los Delfines, s/n — Bluesea Lentiscos',sub:'Cala en Blanes · 07760 Ciudadela · ~10 min de carro do casco antigo · 6 min a pé da praia',mu:'https://www.google.com/maps/search/?api=1&query=Avenida+Los+Delfines+s%2Fn+Cala+en+Blanes+07760+Ciudadela+Menorca'},
   ],
   rs:[{lb:'🍽️ Almoço · 12:30 · FECHA ÀS 15H!',nm:'La Cova Fumada',ty:'Frutos do mar · € · ~€15–20pp · sem reserva · chegar antes 13h',
@@ -596,31 +624,31 @@ DAYS.push({
 // ── DIA 3 ──
 DAYS.push({
   id:'d3',city:'',nl:'D3',nd:'01/Out',lb:'Dia 3 · Qua',
-  ti:'🚄 Madrid → Barcelona',su:'1 de Outubro · Trem 13:42',fl:'🚆 Atocha→Sants · ~2h30 · Chega ~16:12',
-  intro:'Dia de transição: manhã tranquila para se despedir de Madrid, trem às 13:42 e chegada em Barcelona ~16:12. Pouca coisa programada — descobrir o Passeig de Gràcia e El Born no primeiro contato com Barcelona. O trem é parte da experiência.',
-  km:'~13 km',hr:'Trem 2h30',co:'~€50pp',
+  ti:'🚄 Madrid → Barcelona',su:'1 de Outubro · OUIGO 13:42',fl:'🚆 Atocha→Sants · 3h02 · Chega 16:44',
+  intro:'Dia de transição: manhã tranquila para se despedir de Madrid, trem OUIGO às 13:42 e chegada em Barcelona às 16:44. Pouca coisa programada — descobrir o Passeig de Gràcia e El Born no primeiro contato com Barcelona. O trem é parte da experiência.',
+  km:'~13 km',hr:'Trem 3h',co:'~€50pp',
   ag:[
     ['08:00','☕ San Ginés','','último café madrileno'],
     ['09:00','🚶 Última caminhada','','Chueca ou Sol'],
     ['10:30','🧳 Check-out hostel','',''],
     ['12:00','🌿 Estação Atocha','','jardim tropical gigante — ver enquanto espera'],
-    ['13:00','🥪 Almoço rápido','','perto de Atocha'],
-    ['13:42','🚄 Trem Madrid→Barcelona','','Madrid Atocha → Barcelona Sants'],
-    ['16:30','🏨 Check-in hostel','','El Born/Gótico'],
-    ['17:00','🦎 Passeig de Gràcia','','Casa Batlló, La Pedrera, caminhar'],
+    ['12:45','🥪 Almoço rápido','','perto de Atocha — embarque abre 13:12'],
+    ['13:42','🚄 OUIGO Madrid→Barcelona','','Madrid Atocha → Barcelona Sants · vagão 6, Cielo, 27A/27B'],
+    ['17:00','🏨 Check-in hostel','','El Born/Gótico'],
+    ['17:30','🦎 Passeig de Gràcia','','Casa Batlló, La Pedrera, caminhar'],
     ['19:00','🏛️ Barri Gòtic + Santa Maria del Mar','','Pont del Bisbe, Catedral, El Born'],
     ['20:30','🍽️ Jantar','','Bar del Pla (El Born — ao lado)'],
     ['21:45','🍰 Demartini Tiramisù','','sobremesa — 3 min a pé do jantar'],
   ],
   it:[
     {type:'act',ts:'12:00',te:'13:00',loc:'Estação Atocha',nm:'Estação de Atocha — jardim tropical',img:'atocha',emo:'🌿',g:['#d1fae5','#a7f3d0'],
-     ds:'A estação histórica de 1851 tem um <strong>jardim tropical gigante</strong> no interior — palmeiras, tartarugas caminhando, abóbada de ferro e vidro. Ver enquanto espera o trem. Almoçar algo rápido no super Mercadona da saída (~€6).',
+     ds:'A estação histórica de 1851 tem um <strong>jardim tropical gigante</strong> no interior — palmeiras, tartarugas caminhando, abóbada de ferro e vidro. Ver enquanto espera o trem. Almoçar algo rápido no super Mercadona da saída (~€6). <strong>Atenção OUIGO:</strong> embarque abre 13:12 (30 min antes) e fecha 13:37 (5 min antes) — não deixar para a última hora.',
      ti:'🚇',tt:'Metro L1 Sol → Atocha Renfe',td:'2 paradas, ~5 min',tc:'€1.50pp',
      mu:'https://www.google.com/maps/dir/?api=1&destination=40.40650,-3.68974&travelmode=transit',
      pt:'Abóbada de ferro e vidro de 1851 com o jardim tropical embaixo — grande angular olhando para cima. Tartaruga na trilha com estrutura metálica ao fundo é uma foto única.',
      cs:['🆓 Jardim grátis','🥪 €6 almoço']},
-    {type:'fc',i:'🚄',nm:'Trem: Madrid Atocha → Barcelona Sants',dt:'13:42 · ~2h30 · Chega ~16:12 · Reservado ✅',pr:'Reservado'},
-    {type:'act',ts:'17:00',te:'19:00',loc:'Passeig de Gràcia',nm:'Passeig de Gràcia — Casa Batlló e La Pedrera',img:'batllo',emo:'🦎',g:['#fce7f3','#f9a8d4'],
+    {type:'fc',i:'🚄',nm:'OUIGO: Madrid Puerta de Atocha → Barcelona Sants',dt:'13:42 · 3h02 · Chega 16:44 · Localizador 3NT8FK · Vagão 6 (Cielo), assentos 27A/27B · ✅ Reservado',pr:'€42pp'},
+    {type:'act',ts:'17:30',te:'19:00',loc:'Passeig de Gràcia',nm:'Passeig de Gràcia — Casa Batlló e La Pedrera',img:'batllo',emo:'🦎',g:['#fce7f3','#f9a8d4'],
      ds:'<strong>Casa Batlló</strong> (nº 43): fachada de Gaudí com escamas de dragão. <strong>La Pedrera / Casa Milà</strong> (nº 92): telhado ondulado absurdo — as duas são Gaudí obrigatório. Tudo grátis por fora. O calçadão hexagonal é design original de Gaudí (1906).',
      ti:'🚇',tt:'Metro L3 Sants → Passeig de Gràcia',td:'~10 min, 4 paradas',tc:'€2.55pp',
      mu:'https://www.google.com/maps/dir/?api=1&destination=41.39160,2.16503&travelmode=transit',
@@ -702,7 +730,7 @@ DAYS.push({
   km:'~8 km',hr:'~7h',co:'~€70pp',
   ag:[
     ['05:15','⏰ Acordar em Cala en Blanes','',''],
-    ['06:00','🚗 Aeroporto MAH','','~45–50 min de carro · devolver carro'],
+    ['06:00','🚗 Aeroporto MAH','','~45–50 min de carro · devolver até 07:00 (Record Go)'],
     ['08:25','✈️ Voo MAH→Madrid','','~1h'],
     ['09:30','🏙️ Chegada Madrid','','check-in hostel'],
     ['10:30','🚇 Metro centro','','do aeroporto T4 ~45 min'],
@@ -714,7 +742,7 @@ DAYS.push({
     ['21:00','🍽️ Jantar despedida','',''],
   ],
   it:[
-    {type:'fc',i:'✈️',nm:'Menorca (MAH) → Madrid (MAD)',dt:'08:25 · ~1h · Chega 10:05 · Devolver carro na locadora do aeroporto',pr:'€50–90'},
+    {type:'fc',i:'✈️',nm:'Menorca (MAH) → Madrid (MAD)',dt:'08:25 · ~1h · Chega 10:05 · Devolver carro na Record Go até 07:00 (funcionário leva ao embarque)',pr:'€50–90'},
     {type:'home',lb:'De volta à base em Madrid (D8 e D9)',addr:'Calle de Bravo Murillo, 293',sub:'Tetuán · 28020 · Metro Alvarado (L1) · 3 min a pé',mu:'https://www.google.com/maps/search/?api=1&query=Calle+de+Bravo+Murillo+293+Madrid+28020'},
     {type:'act',ts:'11:30',te:'13:00',loc:'Gran Vía / Chueca',nm:'Última Caminhada — Gran Vía ou Chueca',img:'chueca',emo:'🌆',g:['#fef3c7','#fde68a'],
      ds:'Última manhã europeia. <strong>Chueca</strong> é o bairro mais elegante de Madrid — arquitetura belíssima do séc. XIX, cafés ótimos. Ou voltar à Gran Vía para uma última foto. A Espanha de despedida.',
