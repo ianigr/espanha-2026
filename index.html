@@ -35,6 +35,7 @@ s{text-decoration:none;font-style:normal;color:#777;font-size:12px;display:block
 .cb.on{background:#34a853;border-color:#34a853}
 .ci b{font-size:13px;color:#333;display:block;margin-bottom:1px}
 .ci s{font-size:12px;color:#777;font-style:normal}
+.ci s a{color:#009ee3;font-weight:700;text-decoration:underline}
 
 /* ── DOCUMENTOS ── */
 .dc{background:#eff8ff;border-top:3px solid #009ee3;padding:18px 16px}
@@ -102,8 +103,10 @@ s{text-decoration:none;font-style:normal;color:#777;font-size:12px;display:block
 .ab{padding:16px}
 .ab h3{font-size:18px;font-weight:800;margin-bottom:5px;letter-spacing:-.2px}
 .ab p{font-size:13px;color:#555;line-height:1.65;margin-bottom:13px}
+.ab p a{color:#009ee3;font-weight:700;text-decoration:underline}
 .wbox{background:#fffbea;border:1px solid #fde68a;border-radius:10px;padding:10px 12px;margin-bottom:10px;font-size:12px;color:#7d5a00;line-height:1.5}
 .wbox b{display:block;margin-bottom:2px;font-weight:900}
+.wbox a{color:#009ee3;font-weight:800;text-decoration:underline}
 
 /* TRANSPORT */
 .tp{display:flex;align-items:center;gap:9px;background:#f0f8ff;border-radius:12px;padding:11px 12px;margin-bottom:10px}
@@ -149,6 +152,7 @@ s{text-decoration:none;font-style:normal;color:#777;font-size:12px;display:block
 .re .rl2{font-size:10px;font-weight:900;color:#92400e;text-transform:uppercase;letter-spacing:.09em;margin-bottom:9px}
 .re .rn{font-size:16px;font-weight:800;margin-bottom:2px}
 .re .rt2{font-size:12px;color:#999;margin-bottom:7px}
+.re .rloc{font-size:12px;color:#92400e;font-weight:700;margin-bottom:9px}
 .re .rr{font-size:13px;color:#555;line-height:1.55;margin-bottom:12px}
 
 /* ── FLIGHT CARD ── */
@@ -201,9 +205,9 @@ s{text-decoration:none;font-style:normal;color:#777;font-size:12px;display:block
 <section id="ck">
   <div class="ck">
     <h3>⚠️ Comprar antes de viajar</h3>
-    <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Tour Bernabéu</b><s>realmadrid.com · ~€35pp · Só seg–sex · você vai na terça 30/Set ✅</s></div></div>
-    <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Sagrada Família</b><s>sagradafamilia.org · €35–45pp · OBRIGATÓRIO reservar antes</s></div></div>
-    <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Barça Immersive Tour</b><s>fcbarcelona.com · €32pp · tour completo indisponível por obras</s></div></div>
+    <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Tour Bernabéu</b><s><a href="https://www.realmadrid.com/en-US/tour-bernabeu" target="_blank">realmadrid.com</a> · ~€35pp · Só seg–sex · você vai na terça 30/Set ✅</s></div></div>
+    <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Sagrada Família</b><s><a href="https://sagradafamilia.org/en/tickets" target="_blank">sagradafamilia.org</a> · €35–45pp · OBRIGATÓRIO reservar antes</s></div></div>
+    <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Barça Immersive Tour</b><s><a href="https://www.fcbarcelona.com/en/tickets" target="_blank">fcbarcelona.com</a> · €32pp · tour completo indisponível por obras</s></div></div>
     <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Trem Madrid→Barcelona</b><s>✅ Reservado — OUIGO 01/Out 13:42, localizador 3NT8FK</s></div></div>
     <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Voo BCN→Menorca · 03/Out 21:30</b><s>✅ Reservado — Vueling ou Air Nostrum</s></div></div>
     <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Voo Menorca→Madrid · 06/Out 08:25</b><s>✅ Reservado — Iberia ou Vueling</s></div></div>
@@ -276,6 +280,7 @@ function rest(r){
     <div class="rl2">${r.lb}</div>
     <div class="rn">${r.nm}</div>
     <div class="rt2">${r.ty}</div>
+    <div class="rloc">📍 ${r.loc}</div>
     <div class="rr">${r.rc}</div>
     <a href="${r.mu}" target="_blank" class="mb">📍 Navegar até aqui</a>
   </div>`;
@@ -432,14 +437,14 @@ DAYS.push({
   it:[
     {type:'act',ts:'09:30',te:'13:00',loc:'Santiago Bernabéu',nm:'Tour Bernabéu + Loja Oficial + Starbucks',img:'bernabeu',emo:'⚽',g:['#fffde7','#fff9c4'],
      ds:'A casa do Real Madrid. Tour (~1h30–2h): campo (vista da tribuna), balneários dos jogadores, sala de troféus, tribuna de honra. Depois: <strong>loja oficial do Real Madrid</strong> — camisetas personalizadas, souvenirs exclusivos. E o <strong>Starbucks do Bernabéu</strong>: café com vista para a fachada do estádio, foto obrigatória.',
-     w:'RESERVAR online em realmadrid.com · Tours seg–sex · você vai na terça ✅ · Entrada: Porta 55',
+     w:'RESERVAR online em <a href="https://www.realmadrid.com/en-US/tour-bernabeu" target="_blank">realmadrid.com</a> · Tours seg–sex · você vai na terça ✅ · Entrada: Porta 55',
      ti:'🚶',tt:'A pé da hospedagem → leste pela Bravo Murillo → Castellana → Bernabéu',td:'~25 min',tc:'Grátis',
      mu:'https://www.google.com/maps/search/?api=1&query=40.45307,-3.68834',
      pt:'Na tribuna de honra: ângulo lateral olhando para o gramado verde com arquibancadas ao fundo. Starbucks: janela com fachada do estádio ao fundo — foto com o café na mão.',
      cs:['⚽ ~€35pp (reservar!)','🆓 A pé da hospedagem']},
     {type:'route',i:'🚶',t:'A pé · Bernabéu → Jamón Jamón (Av. General Perón) · ~15 min',c:'Grátis'},
-    {type:'rest',lb:'🍽️ Almoço · 13:00',nm:'Jamón Jamón',ty:'Bocadillería · € · ~€8–12pp',
-     rc:'Bar de bocadillos e petiscos com jamón como protagonista — casual, rápido, perto do Bernabéu. <strong>Av. del General Perón, 27</strong>. Aberto 08h-23h (fecha domingo).',
+    {type:'rest',lb:'🍽️ Almoço · 13:00',nm:'Jamón Jamón',ty:'Bocadillería · € · ~€8–12pp',loc:'Av. del General Perón, 27, Madrid',
+     rc:'Bar de bocadillos e petiscos com jamón como protagonista — casual, rápido, perto do Bernabéu. Aberto 08h-23h (fecha domingo).',
      mu:'https://www.google.com/maps/search/?api=1&query=Jamon+Jamon+Av+General+Peron+27+Madrid'},
     {type:'route',i:'🚇',t:'Metro Nuevos Ministerios → L1 → Sol → L2 → Retiro',c:'~20 min · €1.50pp'},
     {type:'act',ts:'14:30',te:'16:30',loc:'Parque del Retiro',nm:'Parque del Retiro + Barco no Lago',img:'retiro',emo:'🌿',g:['#dcfce7','#bbf7d0'],
@@ -456,12 +461,12 @@ DAYS.push({
      pt:'Las Meninas: posicionar centralizado à distância média — quadro enorme, detalhe do espelho ao fundo. Pinturas Negras: Saturno Devorando un Hijo — imponente de perto.',
      cs:['🆓 Grátis 18h–20h (ter-sab)']},
     {type:'route',i:'🚶',t:'A pé · Prado → Casa Labra · ~15 min',c:'Grátis'},
-    {type:'rest',lb:'🍽️ Jantar · 20:15 · sem reserva',nm:'Casa Labra',ty:'Taberna histórica · € · ~€10–15pp',
-     rc:'Fundada em 1860 — taberna em pé no balcão, sem mesas. Pedir: <strong>tajadas de bacalao frito</strong> e <strong>croquetas de bacalao</strong> (a especialidade). Foi aqui que o PSOE foi fundado em 1879. <strong>Calle Tetuán, 12</strong>, perto de Sol.',
+    {type:'rest',lb:'🍽️ Jantar · 20:15 · sem reserva',nm:'Casa Labra',ty:'Taberna histórica · € · ~€10–15pp',loc:'Calle Tetuán, 12, Madrid',
+     rc:'Fundada em 1860 — taberna em pé no balcão, sem mesas. Pedir: <strong>tajadas de bacalao frito</strong> e <strong>croquetas de bacalao</strong> (a especialidade). Foi aqui que o PSOE foi fundado em 1879.',
      mu:'https://www.google.com/maps/search/?api=1&query=Casa+Labra+Calle+Tetuan+12+Madrid'},
     {type:'route',i:'🚶',t:'A pé · Casa Labra → 99 Cheesecake · ~5 min',c:'Grátis'},
-    {type:'rest',lb:'🧀 Sobremesa · 21:00',nm:'99 Cheesecake',ty:'Cheesecake · € · desde €0,99 · grab-and-go',
-     rc:'A clássica começa em €0,99. Sabores especiais (pistacho, Lotus, Kinder, Cookies & Cream) de €2,59 a €4,59. Sem mesas — pegar e comer na rua. <strong>Calle San Cristóbal, 17</strong> (perto de Sol).',
+    {type:'rest',lb:'🧀 Sobremesa · 21:00',nm:'99 Cheesecake',ty:'Cheesecake · € · desde €0,99 · grab-and-go',loc:'Calle San Cristóbal, 17, Madrid',
+     rc:'A clássica começa em €0,99. Sabores especiais (pistacho, Lotus, Kinder, Cookies & Cream) de €2,59 a €4,59. Sem mesas — pegar e comer na rua.',
      mu:'https://www.google.com/maps/search/?api=1&query=99+Cheesecake+Calle+San+Cristobal+17+Madrid'},
   ],
   rs:[
@@ -498,7 +503,7 @@ DAYS.push({
      pt:'Final da praia (norte), linha da costa com a cidade ao fundo. Reflexo na areia molhada com luz da manhã funciona bem.',
      cs:['🆓 Grátis','💧 Água/suco']},
     {type:'route',i:'🚶',t:'A pé · Praia → La Cova Fumada · ~8 min',c:'Grátis'},
-    {type:'rest',lb:'🦑 Almoço · 12:30 · FECHA ÀS 15H!',nm:'La Cova Fumada',ty:'Frutos do mar · € · ~€15–20pp · sem reserva · chegar antes 13h',
+    {type:'rest',lb:'🦑 Almoço · 12:30 · FECHA ÀS 15H!',nm:'La Cova Fumada',ty:'Frutos do mar · € · ~€15–20pp · sem reserva · chegar antes 13h',loc:'Carrer del Baluard, 56, Barceloneta',
      rc:'Os inventores da <strong>bomba</strong> (croquete de batata frito, o snack mais famoso de Barceloneta). Sem cardápio, sem reserva. Pedir: bombas, bacalhau à brasa, polvo.',
      mu:'https://www.google.com/maps/search/?api=1&query=La+Cova+Fumada+Barceloneta+Barcelona'},
     {type:'route',i:'🚶',t:'A pé · La Cova Fumada → Mirador Colom · ~15 min',c:'Grátis'},
@@ -572,7 +577,7 @@ DAYS.push({
      mu:'https://www.google.com/maps/search/?api=1&query=Bastio+de+Sa+Font+Ciutadella+Menorca',
      cs:['🆓 Grátis']},
     {type:'route',i:'🚶',t:'A pé · Bastió de Sa Font → Es Tast de Na Sílvia · ~8 min',c:'Grátis'},
-    {type:'rest',lb:'🍽️ Jantar · Porto de Ciudadela · 19:30',nm:'Es Tast de Na Sílvia',ty:'Frutos do mar menorquinos · €€ · ~€20–28pp',
+    {type:'rest',lb:'🍽️ Jantar · Porto de Ciudadela · 19:30',nm:'Es Tast de Na Sílvia',ty:'Frutos do mar menorquinos · €€ · ~€20–28pp',loc:'Calle Santa Clara, 14, Ciutadella',
      rc:'Pedir: <strong>calamars a la planxa</strong> (lula grelhada), <strong>pa amb oli</strong> (pão com azeite e tomate — entrada típica balear).',
      mu:'https://www.google.com/maps/search/?api=1&query=Es+Tast+de+Na+Silvia+Ciudadela+Menorca'},
     {type:'route',i:'🚗',t:'Carro · Ciudadela → hotel (Cala en Blanes) · ~10 min · 21:00',c:'Combustível incluso'},
@@ -619,8 +624,8 @@ DAYS.push({
      cs:['🆓 Grátis']},
     {type:'route',i:'🚗',t:'Carro Monte Toro → hotel (Cala en Blanes) · ~35–40 min · chegada ~17:30',c:'Combustível incluso'},
     {type:'route',i:'🚗',t:'Carro · hotel → Porto de Ciudadela · ~10 min',c:'Combustível incluso'},
-    {type:'rest',lb:'🍽️ Jantar · Porto de Ciudadela · 19:00',nm:'Café Balear',ty:'Frutos do mar + caldereta · €€€ · ~€35–62pp',
-     rc:'Um dos templos da caldereta em Menorca — os donos são pescadores e têm barco próprio, garantindo o produto. Pedir: <strong>caldereta de llagosta menorquina</strong> (o prato mais icônico da ilha, lagosta em caldo espesso). Pla de Sant Joan, 15, no porto de Ciudadela.',
+    {type:'rest',lb:'🍽️ Jantar · Porto de Ciudadela · 19:00',nm:'Café Balear',ty:'Frutos do mar + caldereta · €€€ · ~€35–62pp',loc:'Pla de Sant Joan, 15, Ciutadella',
+     rc:'Um dos templos da caldereta em Menorca — os donos são pescadores e têm barco próprio, garantindo o produto. Pedir: <strong>caldereta de llagosta menorquina</strong> (o prato mais icônico da ilha, lagosta em caldo espesso).',
      mu:'https://www.google.com/maps/search/?api=1&query=Cafe+Balear+Pla+de+Sant+Joan+15+Ciutadella+Menorca'},
     {type:'route',i:'🚗',t:'Carro · Porto → hotel (Cala en Blanes) · ~10 min',c:'Combustível incluso'},
     {type:'warn',b:'Amanhã: acordar às 05:15 — voo 08:25',t:'Aeroporto MAH fica ~45–50 min de carro de Cala en Blanes. Sair do hotel às 06:00, devolver carro na locadora do aeroporto, e estar no check-in às 06:45.'},
@@ -677,12 +682,12 @@ DAYS.push({
      pt:'Pont del Bisbe: embaixo do arco olhando para cima — wide angle. Santa Maria del Mar: nave central em direção ao altar, silhueta de pessoa no centro com a luz do fundo.',
      cs:['🆓 Grátis']},
     {type:'route',i:'🚶',t:'A pé · Barri Gòtic → El Born (jantar) · ~5 min',c:'Grátis'},
-    {type:'rest',lb:'🍽️ Jantar · El Born · 20:30',nm:'Bar del Pla',ty:'Tapas catalanas · €€ · ~€15–20pp',
+    {type:'rest',lb:'🍽️ Jantar · El Born · 20:30',nm:'Bar del Pla',ty:'Tapas catalanas · €€ · ~€15–20pp',loc:'Carrer de Montcada, 2, El Born',
      rc:'Melhor custo-benefício de Barcelona para jantar. Pedir: <strong>croquetes de bacallà, patates braves, truita</strong>. Ambiente animado em El Born.',
      mu:'https://www.google.com/maps/search/?api=1&query=Bar+del+Pla+Barcelona+El+Born'},
     {type:'route',i:'🚶',t:'A pé · Bar del Pla → Demartini Tiramisù · ~3 min',c:'Grátis'},
-    {type:'rest',lb:'🍰 Sobremesa · El Born · 21:45',nm:'Demartini Tiramisù',ty:'Tiramisù artesanal · € · ~€5–7pp · balcão, sem mesas',
-     rc:'Tiramisù montado na hora, no copo, em 5 sabores diferentes. No coração de El Born — 3 min a pé do Bar del Pla. Aberto até 23h (seg-qui/dom) ou meia-noite (sex-sáb).',
+    {type:'rest',lb:'🍰 Sobremesa · El Born · 21:45',nm:'Demartini Tiramisù',ty:'Tiramisù artesanal · € · ~€5–7pp · balcão, sem mesas',loc:'Carrer dels Carders, 44, El Born',
+     rc:'Tiramisù montado na hora, no copo, em 5 sabores diferentes. Aberto até 23h (seg-qui/dom) ou meia-noite (sex-sáb).',
      mu:'https://www.google.com/maps/search/?api=1&query=Demartini+Tiramisu+Carrer+dels+Carders+44+Barcelona'},
   ],
   rs:[]
@@ -713,14 +718,14 @@ DAYS.push({
   it:[
     {type:'act',ts:'09:00',te:'11:30',loc:'Sagrada Família',nm:'Sagrada Família',img:'sagrada',emo:'⛪',g:['#fce7f3','#fbcfe8'],
      ds:'A obra-prima de Gaudí. <strong>Fachada da Natividade</strong> (leste): luz da manhã incide diretamente às 9h — essencial. Interior: colunas que imitam floresta, vitrais colorindo tudo de azul e laranja. Subir as torres vale muito.',
-     w:'RESERVA em sagradafamilia.org — obrigatório. Quem não reservou espera 1–2h de fila.',
+     w:'RESERVA em <a href="https://sagradafamilia.org/en/tickets" target="_blank">sagradafamilia.org</a> — obrigatório. Quem não reservou espera 1–2h de fila.',
      ti:'🚇',tt:'Metro L2 ou L5 → Sagrada Família',td:'De El Born: L4→Verdaguer→L5 · ~18 min',tc:'€2.55pp',
      mu:'https://www.google.com/maps/search/?api=1&query=41.40363,2.17435',
      pt:'Plaça de Gaudí (lado leste, com lago): o lago reflete a Fachada da Natividade às 9h — foto clássica. Dentro: nave central em direção ao altar com vitrais colorindo tudo.',
      cs:['⛪ €35–45pp (com torres)']},
     {type:'route',i:'🚇',t:'Metro L5 Sagrada Família→Collblanc + 10 min a pé',c:'~22 min · €2.55pp'},
     {type:'act',ts:'12:00',te:'13:30',loc:'Camp Nou',nm:'Barça Immersive Tour',img:'campnou',emo:'🔵',g:['#dbeafe','#bfdbfe'],
-     ds:'O estádio está em obras de ampliação (capacidade futura: 105.000 lugares). Disponível: <strong>Barça Immersive Tour</strong> — museu de troféus do Barça + experiência imersiva 360° "Spotify Camp Nou Live" + mirante com vista das obras. Aberto todos os dias 9h30–19h (até 13/out). Reservar em fcbarcelona.com.',
+     ds:'O estádio está em obras de ampliação (capacidade futura: 105.000 lugares). Disponível: <strong>Barça Immersive Tour</strong> — museu de troféus do Barça + experiência imersiva 360° "Spotify Camp Nou Live" + mirante com vista das obras. Aberto todos os dias 9h30–19h (até 13/out). Reservar em <a href="https://www.fcbarcelona.com/en/tickets" target="_blank">fcbarcelona.com</a>.',
      ti:'🚇',tt:'Metro L5 → Collblanc',td:'~12 min + 10 min a pé',tc:'€2.55pp',
      mu:'https://www.google.com/maps/search/?api=1&query=41.38087,2.12282',
      pt:'Mirante com vista das obras — foto histórica do estádio em transformação. Museu: troféu da Champions com a iluminação dourada.',
@@ -750,7 +755,7 @@ DAYS.push({
      pt:'Lado oeste dos bunkers com a cidade em silhueta, Sagrada Família centralizada e sol se pondo. Os dois sentados na borda com Barcelona embaixo — chegar 30 min antes.',
      cs:['🆓 Grátis','🥪 €3–5 lanche do super']},
     {type:'route',i:'🚇',t:'Metro L4 Alfons X → Jaume I (El Born)',c:'~25 min · €2.55pp'},
-    {type:'rest',lb:'🍽️ Jantar · El Born · 21:00',nm:'Bar del Pla',ty:'Tapas catalanas · €€ · ~€15–20pp',
+    {type:'rest',lb:'🍽️ Jantar · El Born · 21:00',nm:'Bar del Pla',ty:'Tapas catalanas · €€ · ~€15–20pp',loc:'Carrer de Montcada, 2, El Born',
      rc:'Melhor custo-benefício de Barcelona. Pedir: <strong>croquetes de bacallà, patates braves, anxoves (anchovas), truita de patates</strong>. Ambiente animado, comida excelente.',
      mu:'https://www.google.com/maps/search/?api=1&query=Bar+del+Pla+Barcelona+El+Born'},
   ],
@@ -786,11 +791,11 @@ DAYS.push({
      pt:'Gran Vía de manhã — com mais calma que no primeiro dia. Mesma placa, outra perspectiva depois de 9 dias de viagem.',
      cs:['🆓 Grátis']},
     {type:'route',i:'🚶',t:'A pé · Gran Vía/Chueca → Casa Revuelta · ~15 min',c:'Grátis'},
-    {type:'rest',lb:'🍽️ Almoço · 13:00 · sem reserva',nm:'Casa Revuelta',ty:'Taberna histórica · € · ~€5–10pp',
-     rc:'Taberna de 1966, clássica das tajadas de bacalao em Madrid — bem mais barata que a maioria. Pedir: <strong>bacalao rebozado</strong> (a especialidade da casa), pincho ~€5,10. Fecha às 16h. <strong>Calle Latoneros, 3</strong>, perto da Plaza Mayor.',
+    {type:'rest',lb:'🍽️ Almoço · 13:00 · sem reserva',nm:'Casa Revuelta',ty:'Taberna histórica · € · ~€5–10pp',loc:'Calle Latoneros, 3, Madrid',
+     rc:'Taberna de 1966, clássica das tajadas de bacalao em Madrid — bem mais barata que a maioria. Pedir: <strong>bacalao rebozado</strong> (a especialidade da casa), pincho ~€5,10. Fecha às 16h. Perto da Plaza Mayor.',
      mu:'https://www.google.com/maps/search/?api=1&query=Casa+Revuelta+Calle+Latoneros+3+Madrid'},
     {type:'route',i:'🚶',t:'A pé · La Latina → 100 Montaditos · ~5-10 min',c:'Grátis'},
-    {type:'rest',lb:'🍽️ Jantar de Despedida · 21:00',nm:'100 Montaditos',ty:'Montaditos · € · ~€8–10pp',
+    {type:'rest',lb:'🍽️ Jantar de Despedida · 21:00',nm:'100 Montaditos',ty:'Montaditos · € · ~€8–10pp',loc:'La Latina, Madrid',
      rc:'Última noite, fechando com o clássico da viagem — montaditos desde €1, escolher vários sabores diferentes pra dividir.',
      mu:'https://www.google.com/maps/search/?api=1&query=100+Montaditos+La+Latina+Madrid'},
   ],
