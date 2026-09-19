@@ -217,7 +217,7 @@ s{text-decoration:none;font-style:normal;color:#777;font-size:12px;display:block
     <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Hospedagem Madrid</b><s>✅ Reservado — Bravo Murillo 293 (D1–D2 e D8–D9)</s></div></div>
     <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Hospedagem Barcelona</b><s>✅ Reservado — Carrer de Sant Pere Més Baix, 35 (D3–D4)</s></div></div>
     <div class="ci"><div class="cb on" onclick="this.classList.toggle('on')"></div><div><b>Hospedagem Menorca</b><s>✅ Reservado — Bluesea Lentiscos, Cala en Blanes (D5–D7)</s></div></div>
-    <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Validar check-in antecipado — D1 (29/Set)</b><s>Pousa 10:05, check-in padrão só às 15h — perguntar ao anfitrião se dá pra entrar antes</s></div></div>
+    <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Validar check-in antecipado — D1 (29/Set)</b><s>Pousa 10:05, check-in padrão só às 15h — perguntar à anfitriã antes da viagem (define Plano A ou B no D1)</s></div></div>
     <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>Validar check-in antecipado — D8 (06/Out)</b><s>Chega de Menorca 09:30 (2ª vez em Bravo Murillo 293) — mesma dúvida do horário</s></div></div>
     <div class="ci"><div class="cb" onclick="this.classList.toggle('on')"></div><div><b>€200 em espécie por pessoa</b><s>Bares locais preferem dinheiro</s></div></div>
   </div>
@@ -353,12 +353,12 @@ const DAYS = [];
 DAYS.push({
   id:'d1',city:'',nl:'D1',nd:'29/Set',lb:'Dia 1 · Ter',
   ti:'🇪🇸 Chegada em Madrid',su:'29 de Setembro',fl:'✈️ Pouso às 10:05 no Terminal 2',
-  intro:'Primeiro dia em Madrid — chegada às 10h depois de uma noite de voo. Sem pausas ao meio-dia: 3h de compras na Gran Vía, centro histórico, <strong>Mercado San Miguel</strong> ao lado da Plaza Mayor, Palácio Real e pôr do sol no Templo de Debod (aberto — só fecha às segundas, e D1 é terça).',
+  intro:'Primeiro dia em Madrid — chegada às 10h depois de uma noite de voo. <strong>Plano A ou B</strong>, dependendo se a anfitriã libera entrada antecipada (confirmar antes!): ou passam na hospedagem pra tomar banho, ou deixam a mala num guarda-volumes perto da Gran Vía. Dali em diante o dia é igual: 3h de compras na Gran Vía, centro histórico, <strong>Mercado San Miguel</strong> ao lado da Plaza Mayor, Palácio Real e pôr do sol no Templo de Debod (aberto — só fecha às segundas, e D1 é terça).',
   km:'~14 km',hr:'~10h',co:'~€55pp',
   ag:[
     ['10:05','✈️ Pouso T2','','saída rápida — sem bagagem despachada'],
-    ['11:00','🏨 Check-in','','Calle de Bravo Murillo, 293 · Tetuán · 28020'],
-    ['11:30','🚇 Metro → Gran Vía','','L1 sul direto (~10 min) · €1.80pp'],
+    ['11:00','🅰️🅱️ Plano A: banho na hospedagem · Plano B: guarda-volumes','','depende da anfitriã liberar entrada antecipada'],
+    ['11:30','🚇 Metro → Gran Vía','','L1 direto (~10 min, Plano A) ou já estar lá (Plano B)'],
     ['11:30','🛍️ Gran Vía — compras + fotos (3h)','','Primark · Lefties · Sephora · Adidas · Nike · placa "Gran Vía"'],
     ['14:30','🏪 Normal + 100 Montaditos · almoço','','Normal: Calle Carretas, 10 · 100 Montaditos perto de Sol'],
     ['15:00','⬛ Plaza Mayor + Puerta del Sol','','arcadas barrocas · km 0 · estátua do Urso'],
@@ -369,12 +369,19 @@ DAYS.push({
   ],
   it:[
     {type:'home',lb:'Nossa base em Madrid (D1, D2, D8 e D9)',addr:'Calle de Bravo Murillo, 293',sub:'Tetuán · 28020 · Metro Alvarado (L1) · 3 min a pé',mu:'https://www.google.com/maps/search/?api=1&query=Calle+de+Bravo+Murillo+293+Madrid+28020'},
-    {type:'act',ts:'10:05',te:'11:00',loc:'Aeroporto T2 → Calle de la Victoria',nm:'Aeroporto T2 → Hospedagem',img:'',emo:'🛬',g:['#e8f4ff','#c7e3f7'],
-     ds:'Sem bagagem despachada — saída direta para o metro. Seguir placas "Metro" dentro do T2. Destino: <strong>Calle de Bravo Murillo, 293</strong> (Tetuán · 28020).',
+    {type:'act',ts:'10:05',te:'11:00',loc:'Aeroporto T2 → Bravo Murillo 293',nm:'Plano A — Se a anfitriã liberar entrada antecipada',img:'',emo:'🛬',g:['#e8f4ff','#c7e3f7'],
+     ds:'Sem bagagem despachada — saída direta para o metro. Seguir placas "Metro" dentro do T2. Destino: <strong>Calle de Bravo Murillo, 293</strong> (Tetuán · 28020). Chegando, deixar a mala, tomar banho e trocar de roupa antes de sair — depois de uma noite de voo, faz toda diferença.',
+     w:'Confirmar com a anfitriã ANTES da viagem se dá pra entrar mais cedo (ver checklist). Se ela confirmar, este é o plano.',
      ti:'🚇',tt:'L8 → Nuevos Ministerios → L1 norte → Alvarado → 3 min a pé',td:'~50 min total',tc:'€5pp',
      mu:'https://www.google.com/maps/search/?api=1&query=Calle+de+Bravo+Murillo+293+Madrid+28020',
-     pt:'',cs:['💳 €5pp bilhete aeroporto especial']},
-    {type:'route',i:'🚇',t:'Metro L1 sul → Gran Vía (direto)',c:'~10 min · €1.80pp'},
+     cs:['💳 €5pp bilhete aeroporto especial','🚿 Banho + troca de roupa']},
+    {type:'act',ts:'10:05',te:'11:00',loc:'Aeroporto T2 → Gran Vía',nm:'Plano B — Se NÃO liberar entrada antecipada',img:'',emo:'🧳',g:['#fef3c7','#fde68a'],
+     ds:'Sem bagagem despachada — saída direta para o metro, direto para o centro (sem passar pela hospedagem). Ao chegar perto da Gran Vía/Sol, abrir o app <strong>Radical Storage</strong> ou <strong>Nannybag</strong> e reservar o guarda-volumes parceiro mais próximo — mostra o endereço exato na hora. Deixar as malas lá e seguir o dia sem carregar nada.',
+     w:'Usar este plano só se a anfitriã não confirmar entrada antecipada. Buscar as malas de volta no fim do dia, antes de ir para a hospedagem (ver aviso na última rota do dia).',
+     ti:'🚇',tt:'L8 → Nuevos Ministerios → L1 sul → Gran Vía (direto)',td:'~35 min total',tc:'€5pp',
+     mu:'https://www.google.com/maps/search/?api=1&query=Gran+Via+Madrid',
+     cs:['💳 €5pp bilhete aeroporto especial','🧳 ~€5–6pp/dia por mala']},
+    {type:'route',i:'🚇',t:'Metro L1 sul → Gran Vía (direto)',c:'~10 min · €1.80pp · só no Plano A'},
     {type:'act',ts:'11:30',te:'14:30',loc:'Gran Vía — Compras + Fotos',nm:'Gran Vía — Fotos + Bloco de Compras (3h)',img:'granvia',emo:'🏛️',g:['#fff3e0','#ffe0b2'],
      ds:'A avenida mais icônica de Madrid. <strong>Foto da namorada na placa "Gran Vía"</strong> nas esquinas. Edificio Metrópolis, Telefónica, Capitol — arquitetura art déco. 🛍️ <strong>Bloco de compras:</strong> <strong>Primark</strong> (nº 32, vários andares), <strong>Lefties</strong> (Gran Vía/Preciados), <strong>Sephora</strong> (Calle Preciados — sem escorregador, é a de Barcelona que tem), <strong>Adidas</strong> e <strong>Nike</strong> na área. Saindo: passar na <strong>Normal</strong> (Calle Carretas, 10 — entre Sol e Plaza Mayor, 5 min a pé): beleza, casa, snacks a preço baixo.',
      ti:'🚇',tt:'Metro L1 sul · Alvarado → Gran Vía (direto)',td:'~10 min',tc:'€1.80pp',
@@ -414,6 +421,7 @@ DAYS.push({
     {type:'rest',lb:'🍽️ Jantar · La Latina · 20:30',nm:'Calle Cava Baja — tapas locais',ty:'Tapas madrilenas · € · ~€12–16pp',loc:'Calle Cava Baja, La Latina, Madrid',
      rc:'Qualquer bar com movimento local. Evitar cardápio plastificado na calçada. Pedir: <strong>patatas bravas, croquetas de jamón</strong>. Com qualquer bebida (água, suco) a tapa muitas vezes vem por conta.',
      mu:'https://www.google.com/maps/search/?api=1&query=40.41321,-3.70940'},
+    {type:'warn',b:'No Plano B? Buscar a mala antes de ir pra hospedagem!',t:'O guarda-volumes (Radical Storage/Nannybag) fica perto de Gran Vía/Sol — passar lá para pegar as malas antes de seguir para Bravo Murillo 293, já que La Latina fica a poucos minutos a pé dali.'},
     {type:'route',i:'🚇',t:'Metro La Latina → hostel (Bravo Murillo 293) · ~25 min',c:'€1.50pp'},
   ],
   rs:[]
